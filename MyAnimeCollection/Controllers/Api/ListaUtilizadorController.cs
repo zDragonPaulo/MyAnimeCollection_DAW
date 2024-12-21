@@ -16,32 +16,33 @@ namespace MyAnimeCollection.Controllers
             _context = context;
         }
 
+
         // GET: api/ListaUtilizador
         [HttpGet]
         public ActionResult<IEnumerable<ListaUtilizador>> GetListaUtilizadores()
         {
-            return _context.ListaUtilizadores.ToList();
+            return _context.ListasUtilizador.ToList();
         }
 
         // GET: api/ListaUtilizador/5
         [HttpGet("{id}")]
         public ActionResult<ListaUtilizador> GetListaUtilizador(int id)
         {
-            var listaUtilizador = _context.ListaUtilizadores.Find(id);
+            var listaUtilizador = _context.ListasUtilizador.Find(id);
 
             if (listaUtilizador == null)
             {
                 return NotFound();
             }
 
-            return listaUtilizador;
+            return Ok(listaUtilizador); // Retorne com Ok()
         }
 
         // POST: api/ListaUtilizador
         [HttpPost]
         public ActionResult<ListaUtilizador> PostListaUtilizador(ListaUtilizador listaUtilizador)
         {
-            _context.ListaUtilizadores.Add(listaUtilizador);
+            _context.ListasUtilizador.Add(listaUtilizador);
             _context.SaveChanges();
 
             return CreatedAtAction(nameof(GetListaUtilizador), new { id = listaUtilizador.ListaUtilizadorId }, listaUtilizador);
@@ -66,16 +67,17 @@ namespace MyAnimeCollection.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteListaUtilizador(int id)
         {
-            var listaUtilizador = _context.ListaUtilizadores.Find(id);
+            var listaUtilizador = _context.ListasUtilizador.Find(id);
             if (listaUtilizador == null)
             {
                 return NotFound();
             }
 
-            _context.ListaUtilizadores.Remove(listaUtilizador);
+            _context.ListasUtilizador.Remove(listaUtilizador);
             _context.SaveChanges();
 
             return NoContent();
         }
+
     }
 }
