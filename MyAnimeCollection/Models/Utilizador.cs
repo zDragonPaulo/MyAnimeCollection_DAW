@@ -4,13 +4,13 @@ public class Utilizador
 {
     [Key]
     public int UtilizadorId { get; set; } 
-    public string Nome { get; set; }
+    public string? Nome { get; set; }
     public int Idade { get; set; }
-    public string Email { get; set; }
-    public string Biografia { get; set; }
-    public string Aniversario { get; set; }
+    public string? Email { get; set; }
+    public string? Biografia { get; set; }
+    public string? Aniversario { get; set; }
 
-    public ICollection<ListaUtilizador> Listas { get; set; }
-    public ICollection<AvaliacaoAnime> AvaliacoesAnime { get; set; }
-    public ICollection<AvaliacaoListaUtilizador> AvaliacoesListas { get; set; }
+    public ICollection<ListaUtilizador> Listas { get; set; } = new List<ListaUtilizador>();
+    public ICollection<AvaliacaoAnime> AvaliacoesAnime { get; set; } = new List<AvaliacaoAnime>();
+    public ICollection<AvaliacaoListaUtilizador> AvaliacoesListas { get; set; } = new List<AvaliacaoListaUtilizador>();
 }
