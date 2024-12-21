@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAnimeCollection", "MyAnimeCollection\MyAnimeCollection.csproj", "{CC63FCB5-33E6-4644-9D0B-DBE673A5538D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC63FCB5-33E6-4644-9D0B-DBE673A5538D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC63FCB5-33E6-4644-9D0B-DBE673A5538D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC63FCB5-33E6-4644-9D0B-DBE673A5538D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC63FCB5-33E6-4644-9D0B-DBE673A5538D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9ECA7984-AF9E-4262-AA3B-7607061928FE}
+	EndGlobalSection
+EndGlobal
