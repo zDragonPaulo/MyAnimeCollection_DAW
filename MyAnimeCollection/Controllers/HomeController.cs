@@ -1,31 +1,48 @@
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using MyAnimeCollection.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Net.Http.Json;
 
-namespace MyAnimeCollection.Controllers;
-
-public class HomeController : Controller
+namespace MyAnimeCollection.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    public class HomeController : Controller
     {
-        _logger = logger;
-    }
+        private readonly HttpClient _httpClient;
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+        public HomeController(IHttpClientFactory httpClientFactory)
+        {
+            _httpClient = httpClientFactory.CreateClient();
+        }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+        public async Task<IActionResult> Index(int userId, string listName)
+        {
+            var lists = new AnimeLists();
+            string error = null;
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            try
+            {
+                // Simula a chamada para a API (substitua com a URL real da sua API)
+                lists = await _httpClient.GetFromJsonAsync<AnimeLists>($"https://api.seuservidor.com/anime/list/{userId}");
+            }
+            catch
+            {
+                error = "Erro ao buscar listas de animes.";
+            }
+
+            // Normaliza o nome da lista
+            listName = listName?.ToLower().Replace("-", " ");
+            var listMapping = new Dictionary<string, List<Anime>>
+            {
+                { "por ver", lists.PorVer },
+                { "a ver", lists.AVer },
+                { "completado", lists.Completado }
+            };
+
+            // Verifica qual lista carregar
+            ViewBag.ListName = listName;
+            ViewBag.Error = error;
+            ViewBag.List = listMapping.GetValueOrDefault(listName, null);
+
+            return View();
+        }
     }
 }
