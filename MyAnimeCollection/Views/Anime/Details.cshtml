@@ -1,0 +1,26 @@
+@model Anime
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="container">
+    <h1 class="my-4">@Model.Title</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="@Model.ImageURL" alt="@Model.Title" class="img-fluid" />
+        </div>
+        <div class="col-md-8">
+            <h5>Gêneros:</h5>
+            <ul>
+                @foreach (var genre in Model.Genres)
+                {
+                    <li>@genre</li>
+                }
+            </ul>
+            <h5>Número de Episódios: @Model.NumberEpisodes</h5>
+            <h5>Sinopse:</h5>
+            <p>@Model.Synopsis</p>
+        </div>
+    </div>
+</div>
