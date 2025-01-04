@@ -4,6 +4,10 @@ using AnimeAPI.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Set the DataDirectory to the application's base directory
+AppDomain.CurrentDomain.SetData("DataDirectory", Path.Combine(Directory.GetCurrentDirectory(), "APP_Data"));
+
+
 // Configuração do DbContext com SQL Server
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
