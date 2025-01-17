@@ -1,17 +1,27 @@
 \documentclass[a4paper,12pt]{report}
 \usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{csquotes}
 \usepackage{amsmath}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage[backend=biber]{biblatex}
 
-% Configurações de layout
+\addbibresource{Recursos/referencias.bib}
+
 \setlength{\parindent}{1.5cm}
 \setlength{\parskip}{0.5cm}
 \renewcommand{\baselinestretch}{1.5}
 
+\titleformat{\chapter}[display]
+  {\normalfont\LARGE\bfseries}{}{0pt}{\Huge}
+\renewcommand{\contentsname}{Índice}
+
 \begin{document}
 
-% Capa
 \begin{titlepage}
 	\centering
 	\includegraphics[width=0.5\textwidth]{Recursos/Logos/LOGO_IPB.png}\par
@@ -33,7 +43,6 @@
 	\textbf{Beja, janeiro de 2025}
 \end{titlepage}
 
-% Página de rosto
 \newpage
 \begin{titlepage}
 	\centering
@@ -53,20 +62,17 @@
 	\textbf{DOCENTE}\\
 	\textbf{Professor Luís Carlos Bruno}
 
-	Trabalho realizado no âmbito da unidade curricular Desenvolvimento de Aplicações Web
+	Trabalho realizado no âmbito da unidade curricular Desenvolvimento de Aplicações Web \cite{daw}
 
 	\vfill
 	\textbf{Beja, janeiro de 2025}
 \end{titlepage}
 
-% Índice
 \newpage
 \tableofcontents
 \newpage
 
-% Introdução
 \chapter{Introdução}
-
 Neste relatório iremos fazer a Implementação de uma aplicação de gestão de media, que tem como objetivo ajudar a organizar o conteúdo
 dos fãs de anime, ao ser possível categorizar os animes entre: Por visualizar, a visualizar, visualizados e também ser possível dar uma
 classificação aos mesmos ou às listas de outros utilizadores. Irá ser feita uma API que irá conter todos os animes e os seus dados
@@ -75,7 +81,6 @@ três grandes partes, sendo estas a Análise e Desenho do Sistema cujas quais j�
 de Implementação onde serão referidos os metodos de construção utilizados para fazer os casos de usos referidos na Analise e Desenho.
 
 %-----------------------------------------------------------------------------------------------------------------------------%
-% Análise do Sistema
 \chapter{Análise do Sistema}
 Para analisar o sistema, é necessário caracterizar os atores que realizarão as tarefas neste sistema, e quais serão as tarefas que serão
 realizadas pelos mesmos, para isso serão utilizados os Casos de Uso, considerando a notação UML.
@@ -98,49 +103,120 @@ avaliou-a com 5 estrelas.
 
 %-----------------------------------------------------------------------------------------------------------------------------%
 \section{Diagrama de Casos de Uso}
-Para criar o diagrama de casos de uso, foi utilizado a plataforma draw.io, respeitando a notação de casos de uso do UML
+Para criar o diagrama de casos de uso, foi utilizado a plataforma draw.io, respeitando a notação de casos de uso do UML.
+
+\includegraphics[width=1\textwidth]{Recursos/Imagens/DiagramaCasoUso.png}\par
 
 \subsection{Caso de Uso Nº1 - Consultar Animes}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+		\hline
+		\textbf{Descrição}                                                                                   & \textbf{Atores} & \textbf{Pré-Condições}                                                     & \textbf{Pós-Condições}                                       & \textbf{Cenário Principal}                                                                & \textbf{Situação de Falha}                                                            \\ \hline
+		Permite ao utilizador pesquisar informações sobre um anime específico, como sinopse, episódios, etc. & Visualizador    & O utilizador deve estar conectado à internet e estar com a sessão iniciada & O anime é exibido com detalhes como sinopse, episódios, etc. & O Visualizador pesquisa um anime pelo nome, e o sistema retorna as informações detalhadas & Mostra um erro que identifica se o anime não foi encontrado ou foi um erro de conexão \\ \hline
+	\end{tabularx}
+\end{table}
 
 \subsection{Caso de Uso Nº2 - Adicionar Animes a uma Lista}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+		\hline
+		\textbf{Descrição}                                                                                                  & \textbf{Atores} & \textbf{Pré-Condições}                                                     & \textbf{Pós-Condições}                   & \textbf{Cenário Principal}                                                                                                                                                         & \textbf{Situação de Falha}                                                                  \\ \hline
+		Permite ao utilizador adicionar um anime à sua lista pessoal de animes para organizar seu progresso de visualização & Gestor de Lista & O utilizador deve estar conectado à internet e estar com a sessão iniciada & O anime é adicionado à lista com sucesso & O Gestor de Lista navega até o anime desejado e seleciona a opção "Adicionar à lista", categorizando-o (Por Visualizar, A Visualizar, Visualizados, ou uma criada pelo utilizador) & Mostra um erro que identifica uma falha na adição à lista por erro de sistema ou da conexão \\ \hline
+	\end{tabularx}
+\end{table}
 
 \subsection{Caso de Uso Nº3 - Consultar o Perfil de outro Utilizador}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+		\hline
+		\textbf{Descrição}                                          & \textbf{Atores} & \textbf{Pré-Condições}                           & \textbf{Pós-Condições}                         & \textbf{Cenário Principal}                                                                                                                          & \textbf{Situação de Falha}                                                                      \\ \hline
+		Permite visualizar o perfil e listas de outros utilizadores & Visualizador    & O perfil do outro utilizador deve ser acessível. & As informações do perfil e listas são exibidas & O Visualizador busca pelo nome de outro utilizador e, se o perfil for acessível, o sistema exibe as informações do perfil, como listas e avaliações & Mostra um erro que identifica se a falha foi por inexistência do utilizador ou falha de conexão \\ \hline
+	\end{tabularx}
+\end{table}
 
 \subsection{Caso de Uso Nº4 - Avaliar uma Lista de Animes de outro Utilizador}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+		\hline
+		\textbf{Descrição}                                                       & \textbf{Atores} & \textbf{Pré-Condições}                                                                                           & \textbf{Pós-Condições}            & \textbf{Cenário Principal}                                                                                 & \textbf{Situação de Falha}                                                                           \\ \hline
+		Permite ao utilizador avaliar as listas de animes de outros utilizadores & Gestor de Lista & O utilizador deve estar conectado e estar com a sessão iniciada e a lista de outro utilizador deve ser acessível & A avaliação é submetida e exibida & O utilizador acessa a lista de outro utilizador, avalia e submete a avaliação, que é registada com sucesso & Mostra um erro que identifica uma falha ao enviar a avaliação devido a erro no sistema ou na conexão \\ \hline
+	\end{tabularx}
+\end{table}
 
-\subsection{Caso de Uso Nº5 - Visualizar os animes com melhor avaliação}
+\subsection{Caso de Uso Nº5 (Partilhado) - Visualizar os animes com melhor avaliação}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+		\hline
+		\textbf{Descrição}                                                                                 & \textbf{Atores}                                      & \textbf{Pré-Condições}                                          & \textbf{Pós-Condições}                        & \textbf{Cenário Principal}                                                                         & \textbf{Situação de Falha}                       \\ \hline
+		Exibe uma lista dos animes mais bem avaliados com base nas classificações de todos os utilizadores & Visualizador (não precisa estar com sessão iniciada) & Deve haver dados suficientes de avaliações para gerar uma lista & Lista dos animes mais bem avaliados é exibida & O Visualizador acessa a página de rankings, e o sistema exibe os animes com as melhores avaliações & Mostra um erro que identifica um erro de sistema \\ \hline
+	\end{tabularx}
+\end{table}
 
 %-----------------------------------------------------------------------------------------------------------------------------%
-% Desenho do Sistema
 \chapter{Desenho do Sistema}
-Em seguida são descritos os modelos propostos de interfaces gráficas com o utilizador e do modelo de dados.
 
 \section{Modelação da Base de Dados}
-Descrição dos modelos E/R e relacional/físico da base de dados. O modelo E/R deve conter todas as entidades de dados e respetivas relações que descrevem conceptualmente o sistema. O diagrama relacional/físico descreve a estrutura normalizada de tabelas e suas relações com a identificação dos seus atributos e respetivos tipos.
+Nesta parte será mostrada como será o sistema, considerando as suas tabelas e relações entre elas, e depois será mostrado o modelo físico
+que indica as relações entre as tabelas, os atributos e o tipo dos mesmos.
 
 \subsection{Diagrama E/R}
-<<...>>
+Este é o diagrama de entidade-relação utilizado pelo sistema do MyAnimeCollection:
+
+\includegraphics[width=1\textwidth]{Recursos/Imagens/DiagramaER.png}\par
+
+\subsection{Modelo Relacional}
+\begin{itemize}
+	\item ListaUtilizador (id\_listaUtilizador, id\_utilizador, id\_lista\_animes, nome, descricao)
+	\item ListaAnimes (id\_listaAnime, id\_anime)
+	\item Avaliação\_Lista\_Utilizador (id\_avaliacaoLista, id\_utilizador, id\_listaUtilizador, avaliacao)
+	\item Avaliação\_Anime (id\_avaliacaoAnime, id\_utilizador, id\_anime, avaliacao)
+	\item Utilizadores (id\_utilizador, nome, idade, email, password, biografia)
+	\item Anime (id\_anime, sinopse, id\_categoria, n\_episodios, n\_temporadas)
+	\item Categoria (id\_categoria, nome, descricao)
+\end{itemize}
 
 \subsection{Modelo Físico}
-<<...>>
+\includegraphics[width=1\textwidth]{Recursos/Imagens/ModeloFisico.png}\par
 
+%-----------------------------------------------------------------------------------------------------------------------------%
 \section{Modelação de Interfaces Gráficas com o Utilizador}
-Em seguida são descritos os modelos das interfaces gráficas desenvolvidas suportados em protótipos de baixa/média fidelidade das interfaces gráficas com o utilizador, compostos por um ou mais storyboard e os ecrãs (wireframes) da aplicação.
 
 \subsection{Storyboard(s)}
-<<...>>
+Neste Storyboard podemos visualizar as movimentações entre páginas principais. Existem mais opções que podem ser feitas nas páginas,
+porém serão apenas exploradas posteriormente.
 
-\subsection{Interfaces do Caso de Uso "1"}
-<<...>>
+\includegraphics[width=1\textwidth]{Recursos/Imagens/Storyboard.png}\par
 
-\subsection{Interfaces do Caso de Uso "N"}
-<<...>>
+\subsection{Interfaces do Caso de Uso 1}
+\includegraphics[width=1\textwidth]{Recursos/Imagens/InterfaceCA1e2.png}\par
+
+\subsection{Interfaces do Caso de Uso 2}
+\includegraphics[width=1\textwidth]{Recursos/Imagens/InterfaceCA1e2.png}\par
+
+\subsection{Interfaces do Caso de Uso 3}
+\includegraphics[width=1\textwidth]{Recursos/Imagens/InterfaceCA3.png}\par
+
+\subsection{Interfaces do Caso de Uso 4}
+\includegraphics[width=1\textwidth]{Recursos/Imagens/InterfaceCA4.png}\par
+
+\subsection{Interfaces do Caso de Uso 5}
+\includegraphics[width=1\textwidth]{Recursos/Imagens/InterfaceCA5.png}\par
+
+\subsection{Protótipo de Média Fidelidade}
+\includegraphics[width=1\textwidth]{Recursos/Imagens/MediaFidelidade1.png}\par
+
+\includegraphics[width=1\textwidth]{Recursos/Imagens/MediaFidelidade2.png}\par
 
 % Melhorias efetuadas
 \section{Melhorias efetuadas na Análise e Desenho do Sistema}
-Descrever as principais melhorias efetuadas após a defesa desta fase do projeto.
+O Caso de Uso 5 foi aprofundado, agora sendo possivel visualizar animes por uma data especifica em vez de um periodo predefinido.
 
-% Implementação
+%-----------------------------------------------------------------------------------------------------------------------------%
 \chapter{Implementação}
 Neste capítulo são descritas as principais decisões e ações desenvolvidas na parte da implementação técnica deste projeto.
 
@@ -171,13 +247,16 @@ Descrever as principais decisões globais usadas na codificação da App, justif
 \subsection{Principais Casos Relevantes de Programação}
 Explicação dos principais casos de codificação para os casos de uso em causa, exemplificando com pequenos trechos de código e imagens das interfaces geradas pelas vistas.
 
-% Conclusão e Trabalho Futuro
+%-----------------------------------------------------------------------------------------------------------------------------%
 \chapter{Conclusão e Trabalho Futuro}
-Resumo dos principais resultados obtidos nas tarefas desenvolvidas nesta fase do projeto e identificação de pontos a desenvolver no futuro.
+Nesta etapa do projeto, obtivemos resultados que consideramos bastante satisfatórios e acreditamos que este projeto apresenta um grande
+potencial para o futuro. A utilização do ASP.NET, em vez do Laravel como inicialmente planeado, proporcionou-nos maior facilidade na
+implementação da API, uma vez que o ASP.NET nos permitiu criar uma API e um projeto MVC num único projeto, simplificando assim a comunicação
+entre a API e o Frontend. Estamos confiantes de que a aplicação tem um maior nivel de fidelidade em relação à versão feita no semestre
+anterior na Unidade Curricular de Tecnologias Web e Desenvolvimento de Aplicações Móveis, onde encontramos dificuldades significativas
+devido às limitações da RestDB, que possuía um limite relativamente restrito.
 
-% Referências Bibliográficas
-\chapter*{Referências Bibliográficas}
-\addcontentsline{toc}{chapter}{Referências Bibliográficas}
-Seguir normas APP para citação bibliográfica.
+\printbibliography
+\addcontentsline{toc}{chapter}{Bibliografia}
 
 \end{document}

@@ -1,32 +1,38 @@
+\babel@toc {portuguese}{}\relax 
 \contentsline {chapter}{\numberline {1}Introdução}{4}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Análise do Sistema}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Caracterização dos Atores}{5}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Persona Nº1 - Miguel Silva}{6}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Persona Nº2 - Catarina Silvestre}{6}{subsection.2.1.2}%
 \contentsline {section}{\numberline {2.2}Diagrama de Casos de Uso}{6}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Caso de Uso Nº1 - Consultar Animes}{7}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Caso de Uso Nº2 - Adicionar Animes a uma Lista}{7}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Caso de Uso Nº3 - Consultar o Perfil de outro Utilizador}{7}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Caso de Uso Nº4 - Avaliar uma Lista de Animes de outro Utilizador}{7}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}Caso de Uso Nº5 - Visualizar os animes com melhor avaliação}{7}{subsection.2.2.5}%
-\contentsline {chapter}{\numberline {3}Desenho do Sistema}{8}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Modelação da Base de Dados}{8}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Diagrama E/R}{9}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Modelo Físico}{9}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Modelação de Interfaces Gráficas com o Utilizador}{9}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Storyboard(s)}{9}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Interfaces do Caso de Uso "1"}{9}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Interfaces do Caso de Uso "N"}{10}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Melhorias efetuadas na Análise e Desenho do Sistema}{10}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Implementação}{11}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Arquitetura do Sistema}{11}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Tecnologias Usadas}{12}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Desenvolvimento da API}{12}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Especificação da Interface}{12}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Decisões de Implementação}{12}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Principais Casos Relevantes de Programação}{13}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Desenvolvimento da App Frontend/MVC}{13}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Decisões de Implementação}{13}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Principais Casos Relevantes de Programação}{13}{subsection.4.4.2}%
-\contentsline {chapter}{\numberline {5}Conclusão e Trabalho Futuro}{14}{chapter.5}%
-\contentsline {chapter}{Referências Bibliográficas}{15}{chapter*.2}%
+\contentsline {subsection}{\numberline {2.2.1}Caso de Uso Nº1 - Consultar Animes}{8}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Caso de Uso Nº2 - Adicionar Animes a uma Lista}{10}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Caso de Uso Nº3 - Consultar o Perfil de outro Utilizador}{11}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Caso de Uso Nº4 - Avaliar uma Lista de Animes de outro Utilizador}{12}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Caso de Uso Nº5 (Partilhado) - Visualizar os animes com melhor avaliação}{13}{subsection.2.2.5}%
+\contentsline {chapter}{\numberline {3}Desenho do Sistema}{14}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Modelação da Base de Dados}{14}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Diagrama E/R}{14}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Modelo Relacional}{15}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Modelo Físico}{16}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Modelação de Interfaces Gráficas com o Utilizador}{16}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Storyboard(s)}{16}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Interfaces do Caso de Uso 1}{18}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Interfaces do Caso de Uso 2}{18}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Interfaces do Caso de Uso 3}{19}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Interfaces do Caso de Uso 4}{19}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Interfaces do Caso de Uso 5}{20}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Protótipo de Média Fidelidade}{21}{subsection.3.2.7}%
+\contentsline {section}{\numberline {3.3}Melhorias efetuadas na Análise e Desenho do Sistema}{22}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Implementação}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Arquitetura do Sistema}{23}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Tecnologias Usadas}{23}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Desenvolvimento da API}{24}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Especificação da Interface}{24}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Decisões de Implementação}{24}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Principais Casos Relevantes de Programação}{24}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Desenvolvimento da App Frontend/MVC}{25}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Decisões de Implementação}{25}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Principais Casos Relevantes de Programação}{25}{subsection.4.4.2}%
+\contentsline {chapter}{\numberline {5}Conclusão e Trabalho Futuro}{26}{chapter.5}%
+\contentsline {chapter}{Bibliografia}{27}{chapter*.2}%
