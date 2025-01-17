@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AnimeAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250104161932_AllowNullImageURL")]
-    partial class AllowNullImageURL
+    [Migration("20250117153654_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

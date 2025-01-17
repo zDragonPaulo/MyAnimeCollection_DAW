@@ -6,11 +6,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Set the DataDirectory to the application's base directory
 AppDomain.CurrentDomain.SetData("DataDirectory", Path.Combine(Directory.GetCurrentDirectory(), "APP_Data"));
+Console.WriteLine($"DataDirectory: {AppDomain.CurrentDomain.GetData("DataDirectory")}");
+
 
 
 // Configuração do DbContext com SQL Server
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+{
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    var resolvedConnectionString = connectionString.Replace("|DataDirectory|", AppDomain.CurrentDomain.GetData("DataDirectory")?.ToString() ?? string.Empty);
+    options.UseSqlServer(resolvedConnectionString);
+});
 
 // Adicionar o serviço da API Jikan
 builder.Services.AddHttpClient<JinkanApiService>();
