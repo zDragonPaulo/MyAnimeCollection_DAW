@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,7 +17,8 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/assets/icon.png" width="30" height="30" alt="Logo" /> 𝓜𝔂 𝓐𝓷𝓲𝓶𝓮 𝓒𝓸𝓵𝓵𝓮𝓬𝓽𝓲𝓸𝓷
+                    <img src="~/assets/icon.png" width="30" height="30" alt="Logo" /> 𝓜𝔂 𝓐𝓷𝓲𝓶𝓮
+                    𝓒𝓸𝓵𝓵𝓮𝓬𝓽𝓲𝓸𝓷
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,13 +40,12 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         @if (User?.Identity?.IsAuthenticated ?? false)
                         {
+                            <a class="nav-link" asp-controller="User" asp-action="Profile"
+                                asp-route-userId="@User.FindFirstValue("UserId")">
+                                <i class="fa fa-user"></i> @User.Identity.Name
+                            </a>
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="User" asp-action="Profile">
-                                    <i class="fa fa-user"></i> @User.Identity.Name
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <form method="post" asp-area="" asp-controller="Account" asp-action="Logout">
+                                <form method="post" asp-area="" asp-controller="User" asp-action="Logout">
                                     <button class="btn btn-link nav-link">
                                         <i class="fa fa-sign-out-alt"></i> Logout
                                     </button>
@@ -53,7 +55,7 @@
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">
+                                <a class="nav-link" asp-area="" asp-controller="User" asp-action="Login">
                                     <i class="fa fa-sign-in-alt"></i> Login
                                 </a>
                             </li>
@@ -71,7 +73,8 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2025 - MyAnimeCollection - <a asp-area="" asp-controller="Home" asp-action="Privacy">Termos de Privacidade</a>
+            &copy; 2025 - MyAnimeCollection - <a asp-area="" asp-controller="Home" asp-action="Privacy">Termos de
+                Privacidade</a>
         </div>
     </footer>
 

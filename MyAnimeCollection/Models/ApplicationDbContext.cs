@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace Models {
-    public class ApplicationDbContext : DbContext {
+namespace Models
+{
+    public class ApplicationDbContext : DbContext
+    {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         public DbSet<UserModel> Users { get; set; }
@@ -10,7 +12,8 @@ namespace Models {
         public DbSet<UserAnimeAvaliationModel> UserAnimeAvaliations { get; set; }
         public DbSet<AnimeListModel> AnimeLists { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
             base.OnModelCreating(modelBuilder);
 
             // Configuração da relação entre UserListAvaliationModel e UserModel
@@ -28,11 +31,12 @@ namespace Models {
                 .OnDelete(DeleteBehavior.NoAction);
 
             // Configuração da relação entre UserListModel e UserModel
+            // Configurar o relacionamento entre UserListModel e AnimeListModel
             modelBuilder.Entity<UserListModel>()
-                .HasOne(ul => ul.User)
-                .WithMany(u => u.UserList)
-                .HasForeignKey(ul => ul.UserId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .HasOne(ul => ul.AnimeList) // UserListModel tem uma referência a AnimeListModel
+                .WithMany(al => al.UserList) // AnimeListModel pode ter muitos UserListModel
+                .HasForeignKey(ul => ul.AnimeListId) // Chave estrangeira
+                .OnDelete(DeleteBehavior.Cascade); // Defina o comportamento de exclusão (pode ser outro comportamento, dependendo do seu caso)
         }
     }
 }

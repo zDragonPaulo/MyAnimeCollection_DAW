@@ -26,7 +26,7 @@ namespace Models {
 
         public int Age { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string ImageUrl { get; set; } 
 
         public ICollection<UserListModel>? UserList { get; set; }
 

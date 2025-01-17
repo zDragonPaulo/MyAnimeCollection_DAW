@@ -19,5 +19,8 @@ namespace Models {
 
         [Range(0, 10)]
         public float Avaliation { get; set; }
+
+        [Required]
+        public DateTime DateCreated { get; set; } = DateTime.UtcNow; // Adicionando a data de criação
     }
 }

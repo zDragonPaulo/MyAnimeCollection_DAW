@@ -1,0 +1,48 @@
+@model Models.UserModel
+
+
+<div class="container">
+    <h1 class="my-4">Perfil do Utilizador</h1>
+    @if (Model != null)
+    {
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="@Model.ImageUrl" class="img-fluid rounded-circle" alt="Imagem do Utilizador"
+                    style="max-width: 150px;" />
+                <h5 class="mt-2">@Model.Name</h5>
+                <p><strong>Idade:</strong> @Model.Age</p>
+                @if (!string.IsNullOrEmpty(Model.Biography))
+                {
+                    <p><strong>Biografia:</strong> @Model.Biography</p>
+                }
+            </div>
+
+            <div class="col-md-8">
+                @if (ViewBag.UserLists != null && ViewBag.UserLists.Count > 0)
+
+                {
+                    <h3>Listas de Anime</h3>
+                    @foreach (var list in ViewBag.UserLists)
+                    {
+                        <h4>@list.Name</h4>
+                        <ul>
+                            @foreach (var animeList in list.AnimeLists)
+                            {
+                                <li>@animeList.Anime.Title</li>
+                            }
+                        </ul>
+                    }
+                }
+                else
+                {
+                    <p>Este utilizador não tem listas de anime.</p>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <h5>@ViewBag.Error</h5>
+    }
+
+</div>

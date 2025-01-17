@@ -436,3 +436,4 @@ C:\Users\amant\Documents\ESTIG\DAW\MyAnimeCollection_DAW\MyAnimeCollection\obj\D
 C:\Users\amant\Documents\ESTIG\DAW\MyAnimeCollection_DAW\MyAnimeCollection\obj\Debug\net9.0\MyAnimeC.441E52E5.Up2Date
 C:\Users\amant\Documents\ESTIG\DAW\MyAnimeCollection_DAW\MyAnimeCollection\obj\Debug\net9.0\MyAnimeCollection.genruntimeconfig.cache
 C:\Users\amant\Documents\ESTIG\DAW\MyAnimeCollection_DAW\MyAnimeCollection\obj\Debug\net9.0\ref\MyAnimeCollection.dll
+C:\Users\amant\Documents\ESTIG\DAW\MyAnimeCollection_DAW\MyAnimeCollection\bin\Debug\net9.0\BCrypt.Net-Next.dll
