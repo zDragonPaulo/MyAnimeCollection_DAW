@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\amant\\Documents\\ESTIG\\DAW\\MyAnimeCollection_DAW\\AnimeAPI\\AnimeAPI.csproj": {}
+    "C:\\Users\\Marti\\Documents\\MyAnimeCollection_DAW\\AnimeAPI\\AnimeAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\amant\\Documents\\ESTIG\\DAW\\MyAnimeCollection_DAW\\AnimeAPI\\AnimeAPI.csproj": {
+    "C:\\Users\\Marti\\Documents\\MyAnimeCollection_DAW\\AnimeAPI\\AnimeAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\amant\\Documents\\ESTIG\\DAW\\MyAnimeCollection_DAW\\AnimeAPI\\AnimeAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Marti\\Documents\\MyAnimeCollection_DAW\\AnimeAPI\\AnimeAPI.csproj",
         "projectName": "AnimeAPI",
-        "projectPath": "C:\\Users\\amant\\Documents\\ESTIG\\DAW\\MyAnimeCollection_DAW\\AnimeAPI\\AnimeAPI.csproj",
-        "packagesPath": "C:\\Users\\amant\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\amant\\Documents\\ESTIG\\DAW\\MyAnimeCollection_DAW\\AnimeAPI\\obj\\",
+        "projectPath": "C:\\Users\\Marti\\Documents\\MyAnimeCollection_DAW\\AnimeAPI\\AnimeAPI.csproj",
+        "packagesPath": "C:\\Users\\Marti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Marti\\Documents\\MyAnimeCollection_DAW\\AnimeAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\amant\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Marti\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -36,7 +36,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.100"
       },
@@ -86,7 +86,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+=======
           "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+>>>>>>> bb433069c106815742edfc891d75ff7cee0d584c
         }
       }
     }
