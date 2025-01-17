@@ -86,11 +86,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
-=======
           "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
->>>>>>> e4af4f11cbcb0eed82ceccd87414b485125d71dc
         }
       }
     }
