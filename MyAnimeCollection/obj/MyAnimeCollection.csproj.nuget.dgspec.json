@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Marti\\Documents\\MyAnimeCollection_DAW\\MyAnimeCollection\\MyAnimeCollection.csproj": {}
+    "C:\\Users\\amant\\Documents\\ESTIG\\DAW\\MyAnimeCollection_DAW\\MyAnimeCollection\\MyAnimeCollection.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Marti\\Documents\\MyAnimeCollection_DAW\\MyAnimeCollection\\MyAnimeCollection.csproj": {
+    "C:\\Users\\amant\\Documents\\ESTIG\\DAW\\MyAnimeCollection_DAW\\MyAnimeCollection\\MyAnimeCollection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marti\\Documents\\MyAnimeCollection_DAW\\MyAnimeCollection\\MyAnimeCollection.csproj",
+        "projectUniqueName": "C:\\Users\\amant\\Documents\\ESTIG\\DAW\\MyAnimeCollection_DAW\\MyAnimeCollection\\MyAnimeCollection.csproj",
         "projectName": "MyAnimeCollection",
-        "projectPath": "C:\\Users\\Marti\\Documents\\MyAnimeCollection_DAW\\MyAnimeCollection\\MyAnimeCollection.csproj",
-        "packagesPath": "C:\\Users\\Marti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marti\\Documents\\MyAnimeCollection_DAW\\MyAnimeCollection\\obj\\",
+        "projectPath": "C:\\Users\\amant\\Documents\\ESTIG\\DAW\\MyAnimeCollection_DAW\\MyAnimeCollection\\MyAnimeCollection.csproj",
+        "packagesPath": "C:\\Users\\amant\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\amant\\Documents\\ESTIG\\DAW\\MyAnimeCollection_DAW\\MyAnimeCollection\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marti\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\amant\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -36,13 +36,39 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
         "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -62,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
