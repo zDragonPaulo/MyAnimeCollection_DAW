@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1737130386.10475 "c:/Users/Marti/Documents/MyAnimeCollection_DAW/Relatórios/Relatorio.tex" "Relatorio.pdf" "Relatorio" 1737130388.05106 0
+["pdflatex"] 1737130785.30759 "c:/Users/Marti/Documents/MyAnimeCollection_DAW/Relatórios/Relatorio.tex" "Relatorio.pdf" "Relatorio" 1737130787.42838 0
   "C:/Users/Marti/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1737128265 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Marti/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1440.pk" 1737129781 18748 47e0bcc62cbe9f1d5be639f177e3b630 ""
   "C:/Users/Marti/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1737129682 14064 43be3ed4ee1f7a5b5a3dba821e79e4a3 ""
@@ -71,11 +71,11 @@
   "C:/Users/Marti/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "Recursos/Logos/IPBejaESTIG.jpg" 1731453099 24524 8256cc09fbb9140893a7ec292a0eb389 ""
   "Recursos/Logos/LOGO_IPB.png" 1731453099 70931 8e4fd2cd3676e6d3adc0f137d7334c9f ""
-  "Relatorio.aux" 1737130387 4550 591efd9dbf5088f7de2f2dda7c9d8ae4 "pdflatex"
-  "Relatorio.out" 1737130387 6172 0f1d02b85ecbc1e3c4f5aee149ee382e "pdflatex"
-  "Relatorio.tex" 1737130383 8597 51943850c339a6b9b770cc520dec35bd ""
-  "Relatorio.toc" 1737130387 2777 4596cb12862e0f20c72cc13951d8f023 "pdflatex"
-  "c:/Users/Marti/Documents/MyAnimeCollection_DAW/Relatórios/Relatorio.tex" 1737130383 8597 51943850c339a6b9b770cc520dec35bd ""
+  "Relatorio.aux" 1737130787 4917 baf94238a54b8aa07db2174f2b058b4e "pdflatex"
+  "Relatorio.out" 1737130787 7075 8dc02367e030c79d614b4cccca9110f8 "pdflatex"
+  "Relatorio.tex" 1737130781 8772 4672987ed5914835726600fd21aba724 ""
+  "Relatorio.toc" 1737130787 3062 801de26817cb522c4a75d7346657cb69 "pdflatex"
+  "c:/Users/Marti/Documents/MyAnimeCollection_DAW/Relatórios/Relatorio.tex" 1737130781 8772 4672987ed5914835726600fd21aba724 ""
   (generated)
   "Relatorio.aux"
   "Relatorio.log"
