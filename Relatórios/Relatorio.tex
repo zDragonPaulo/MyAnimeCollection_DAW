@@ -1,0 +1,179 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+% Configurações de layout
+\setlength{\parindent}{1.5cm}
+\setlength{\parskip}{0.5cm}
+\renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+
+% Capa
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.5\textwidth]{Recursos/Logos/LOGO_IPB.png}\par
+	\vspace{1cm}
+	\textbf{Escola Superior de Tecnologia e Gestão}\\
+	\textbf{Licenciatura em Engenharia Informática}
+
+	\textbf{Desenvolvimento de Aplicações Web}
+
+	\textbf{Projeto – Fase de Implementação}
+
+	\textbf{My Anime Collection}
+
+	\textbf{Martinho José Novo Caeiro}\\
+	\textbf{Paulo António Tavares Abade}
+
+	\includegraphics[width=0.5\textwidth]{Recursos/Logos/IPBejaESTIG.jpg}\par
+	\vfill
+	\textbf{Beja, janeiro de 2025}
+\end{titlepage}
+
+% Página de rosto
+\newpage
+\begin{titlepage}
+	\centering
+	\textbf{Instituto Politécnico de Beja}\\
+	\textbf{Escola Superior de Tecnologia e Gestão}\\
+	\textbf{Licenciatura em Engenharia Informática}
+
+	\textbf{Desenvolvimento de Aplicações Web}
+
+	\textbf{Projeto – Fase de Implementação}
+
+	\textbf{My Anime Collection}
+
+	\textbf{Martinho José Novo Caeiro}\\
+	\textbf{Paulo António Tavares Abade}
+
+	\textbf{DOCENTE}\\
+	\textbf{Professor Luís Carlos Bruno}
+
+	Trabalho realizado no âmbito da unidade curricular Desenvolvimento de Aplicações Web
+
+	\vfill
+	\textbf{Beja, janeiro de 2025}
+\end{titlepage}
+
+% Índice
+\newpage
+\tableofcontents
+\newpage
+
+% Introdução
+\chapter{Introdução}
+
+Neste relatório iremos fazer a Implementação de uma aplicação de gestão de media, que tem como objetivo ajudar a organizar o conteúdo
+dos fãs de anime, ao ser possível categorizar os animes entre: Por visualizar, a visualizar, visualizados e também ser possível dar uma
+classificação aos mesmos ou às listas de outros utilizadores. Irá ser feita uma API que irá conter todos os animes e os seus dados
+relacionados, que será acompanhada de uma base de dados que irá guardar as informações dos utilizadores. Neste relatório será dividido em
+três grandes partes, sendo estas a Análise e Desenho do Sistema cujas quais já foram desenvolvidas no relatório anterior, seguida da parte
+de Implementação onde serão referidos os metodos de construção utilizados para fazer os casos de usos referidos na Analise e Desenho.
+
+%-----------------------------------------------------------------------------------------------------------------------------%
+% Análise do Sistema
+\chapter{Análise do Sistema}
+Para analisar o sistema, é necessário caracterizar os atores que realizarão as tarefas neste sistema, e quais serão as tarefas que serão
+realizadas pelos mesmos, para isso serão utilizados os Casos de Uso, considerando a notação UML.
+
+\section{Caracterização dos Atores}
+Neste sistema o mesmo utilizador terá a posição de dois atores diferentes, sendo estes:
+•	Visualizador
+•	Gestor de Listas
+Inicialmente, todos os utilizadores assumem o papel de “Visualizador” e depois irão assumir temporariamente o papel de gestor de listas.
+Para explicar como funciona, será feito o uso de Personas, que são personagens fictícios para representar o futuro utilizador deste sistema.
+
+\subsection{Persona Nº1 - Miguel Silva}
+O Miguel tem 18 anos e entrou no MyAnimeCollection para descobrir novos animes. Ao visualizar o anime “One Piece” e ter-se interessado pelo
+mesmo, adicionou este anime à sua lista “A Visualizar”.
+
+\subsection{Persona Nº2 - Catarina Silvestre}
+A Catarina tem 19 anos e descobriu o MyAnimeCollection pelo Miguel, e então quis verificar o perfil dele para ver que animes ele tem nas suas 
+listas. Ao aceder o perfil do Miguel, viu as listas que ele tinha disponíveis no seu perfil. Após ver a lista de “A Visualizar” do Miguel, 
+avaliou-a com 5 estrelas.
+
+%-----------------------------------------------------------------------------------------------------------------------------%
+\section{Diagrama de Casos de Uso}
+Para criar o diagrama de casos de uso, foi utilizado a plataforma draw.io, respeitando a notação de casos de uso do UML
+
+\subsection{Caso de Uso Nº1 - Consultar Animes}
+
+\subsection{Caso de Uso Nº2 - Adicionar Animes a uma Lista}
+
+\subsection{Caso de Uso Nº3 - Avaliar Lista de Animes}
+
+%-----------------------------------------------------------------------------------------------------------------------------%
+% Desenho do Sistema
+\chapter{Desenho do Sistema}
+Em seguida são descritos os modelos propostos de interfaces gráficas com o utilizador e do modelo de dados.
+
+\section{Modelação da Base de Dados}
+Descrição dos modelos E/R e relacional/físico da base de dados. O modelo E/R deve conter todas as entidades de dados e respetivas relações que descrevem conceptualmente o sistema. O diagrama relacional/físico descreve a estrutura normalizada de tabelas e suas relações com a identificação dos seus atributos e respetivos tipos.
+
+\subsection{Diagrama E/R}
+<<...>>
+
+\subsection{Modelo Físico}
+<<...>>
+
+\section{Modelação de Interfaces Gráficas com o Utilizador}
+Em seguida são descritos os modelos das interfaces gráficas desenvolvidas suportados em protótipos de baixa/média fidelidade das interfaces gráficas com o utilizador, compostos por um ou mais storyboard e os ecrãs (wireframes) da aplicação.
+
+\subsection{Storyboard(s)}
+<<...>>
+
+\subsection{Interfaces do Caso de Uso "1"}
+<<...>>
+
+\subsection{Interfaces do Caso de Uso "N"}
+<<...>>
+
+% Melhorias efetuadas
+\section{Melhorias efetuadas na Análise e Desenho do Sistema}
+Descrever as principais melhorias efetuadas após a defesa desta fase do projeto.
+
+% Implementação
+\chapter{Implementação}
+Neste capítulo são descritas as principais decisões e ações desenvolvidas na parte da implementação técnica deste projeto.
+
+\section{Arquitetura do Sistema}
+Descrever através de um diagrama de implantação (Deployment Diagram) em UML que demonstre quais são os blocos de software e hardware que compõem o sistema a desenvolver (API, Frontend/App MVC, base de dados, entre outros elementos relevantes implementados).
+
+\section{Tecnologias Usadas}
+Enumerar as tecnologias implementadas de suporte ao desenvolvimento. Associar referências bibliográficas eletrónicas a cada tecnologia.
+
+\section{Desenvolvimento da API}
+Descrever a estrutura da API REST e as principais decisões e casos de implementação.
+
+\subsection{Especificação da Interface}
+Especificar a estrutura da API REST desenvolvida e que constitui documentação necessária para um analista ou programador perceber quais são os seus endpoints (método HTTP, URL, dados a enviar no pedido e dados da resposta).
+
+\subsection{Decisões de Implementação}
+Descrever as principais decisões globais usadas na codificação da API do sistema, justificando a sua escolha, para os casos seguintes: abordagem de desenvolvimento usada (database-first, code-first, outro), escolha das rotas, definições dos controladores, definições dos modelos e segurança do sistema.
+
+\subsection{Principais Casos Relevantes de Programação}
+Explicação dos principais e mais complexos casos de codificação, exemplificando com pequenos trechos de código que permitam a um outro programador no futuro perceber esses casos.
+
+\section{Desenvolvimento da App Frontend/MVC}
+Descrever as principais decisões e casos de implementação da App frontend/MVC.
+
+\subsection{Decisões de Implementação}
+Descrever as principais decisões globais usadas na codificação da App, justificando a escolha, para os casos seguintes: escolha das rotas, definições dos controladores, definições dos modelos e segurança do sistema. Definições dos layouts das vistas (componentes das vistas).
+
+\subsection{Principais Casos Relevantes de Programação}
+Explicação dos principais casos de codificação para os casos de uso em causa, exemplificando com pequenos trechos de código e imagens das interfaces geradas pelas vistas.
+
+% Conclusão e Trabalho Futuro
+\chapter{Conclusão e Trabalho Futuro}
+Resumo dos principais resultados obtidos nas tarefas desenvolvidas nesta fase do projeto e identificação de pontos a desenvolver no futuro.
+
+% Referências Bibliográficas
+\chapter*{Referências Bibliográficas}
+\addcontentsline{toc}{chapter}{Referências Bibliográficas}
+Seguir normas APP para citação bibliográfica.
+
+\end{document}
