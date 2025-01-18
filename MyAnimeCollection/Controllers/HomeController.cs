@@ -15,4 +15,9 @@ public class HomeController : Controller
         var animes = await _animeApiService.GetAnimesAsync();
         return View(animes);
     }
+
+    public IActionResult Privacy()
+    {
+        return View();
+    }
 }

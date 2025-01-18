@@ -4,8 +4,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Models;  // Importando o namespace correto
 
 
-namespace Models {
-    public class UserModel {
+namespace Models
+{
+    public class UserModel
+    {
         [Key]
         public int UserId { get; set; }
 
@@ -26,7 +28,7 @@ namespace Models {
 
         public int Age { get; set; }
 
-        public string ImageUrl { get; set; } 
+        public string ImageUrl { get; set; } = "/assets/user.png";
 
         public ICollection<UserListModel>? UserList { get; set; }
 

@@ -45,6 +45,8 @@ namespace MyAnimeCollection.Controllers
                 // Hash da senha para segurança
                 userModel.Password = BCrypt.Net.BCrypt.HashPassword(userModel.Password);
 
+                userModel.ImageUrl = "/assets/user.png";
+
                 _context.Add(userModel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index", "Home");
@@ -114,7 +116,20 @@ namespace MyAnimeCollection.Controllers
             return View(userModel);
         }
 
+        // GET: User/Search
+        public async Task<IActionResult> Search(string query)
+        {
+            if (string.IsNullOrEmpty(query))
+            {
+                return View(new List<UserModel>());
+            }
 
+            var users = await _context.Users
+                .Where(u => u.Name.Contains(query) || u.Email.Contains(query))
+                .ToListAsync();
+
+            return View(users);
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
