@@ -27,15 +27,29 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-6 mb-lg-0"></ul>
 
-                    <form class="d-flex mx-auto" method="get" asp-controller="Anime" asp-action="Search"
-                        style="max-width: 600px;">
-                        <select class="form-select me-4" name="searchType">
+                    <form id="searchForm" class="d-flex mx-auto" method="get" asp-controller="Anime"
+                        asp-action="Search" style="max-width: 600px;">
+                        <select id="searchType" class="form-select me-4" name="searchType"
+                            onchange="updateController()">
                             <option value="animes">Animes</option>
                             <option value="users">Utilizadores</option>
                         </select>
                         <input type="search" placeholder="Pesquisa..." class="form-control me-4" name="query" />
                         <button class="btn btn-outline-success" type="submit">Procurar</button>
                     </form>
+
+                    <script>
+                        function updateController() {
+                            var searchType = document.getElementById("searchType").value;
+                            var searchForm = document.getElementById("searchForm");
+
+                            if (searchType === "animes") {
+                                searchForm.action = "/Anime/Search";
+                            } else if (searchType === "users") {
+                                searchForm.action = "/User/Search";
+                            }
+                        }
+                    </script>
 
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         @if (User?.Identity?.IsAuthenticated ?? false)
