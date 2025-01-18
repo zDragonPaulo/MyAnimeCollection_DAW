@@ -18,14 +18,49 @@
 
 
 \refsection{0}
-  \datalist[entry]{nty/global//global/global/global}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{bootstrap}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=6699fc2680f2601917ba69358414fa51}{%
+           family={Bootstrap},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{6699fc2680f2601917ba69358414fa51}
+      \strng{fullhash}{6699fc2680f2601917ba69358414fa51}
+      \strng{fullhashraw}{6699fc2680f2601917ba69358414fa51}
+      \strng{bibnamehash}{6699fc2680f2601917ba69358414fa51}
+      \strng{authorbibnamehash}{6699fc2680f2601917ba69358414fa51}
+      \strng{authornamehash}{6699fc2680f2601917ba69358414fa51}
+      \strng{authorfullhash}{6699fc2680f2601917ba69358414fa51}
+      \strng{authorfullhashraw}{6699fc2680f2601917ba69358414fa51}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Bootstrap}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://getbootstrap.com/
+      \endverb
+      \verb{url}
+      \verb https://getbootstrap.com/
+      \endverb
+    \endentry
     \entry{daw}{online}{}{}
       \name{author}{1}{}{%
-        {{hash=750ed5ad01d6eb955be2424f4e825ff0}{%
+        {{un=0,uniquepart=base,hash=750ed5ad01d6eb955be2424f4e825ff0}{%
            family={Bruno},
            familyi={B\bibinitperiod},
            given={Luis},
-           giveni={L\bibinitperiod}}}%
+           giveni={L\bibinitperiod},
+           givenun=0}}%
       }
       \strng{namehash}{750ed5ad01d6eb955be2424f4e825ff0}
       \strng{fullhash}{750ed5ad01d6eb955be2424f4e825ff0}
@@ -37,6 +72,9 @@
       \strng{authorfullhashraw}{750ed5ad01d6eb955be2424f4e825ff0}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Página da Unidade Curricular de Desenvolvimento de Aplicações Web}
@@ -50,6 +88,435 @@
       \endverb
       \verb{url}
       \verb https://cms.ipbeja.pt/course/view.php?id=1451
+      \endverb
+    \endentry
+    \entry{aspnet}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={Microsoft},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{extraname}{1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{ASP.NET}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-9.0
+      \endverb
+      \verb{url}
+      \verb https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-9.0
+      \endverb
+    \endentry
+    \entry{entityframework}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={Microsoft},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{extraname}{2}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Entity Framework Core}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://learn.microsoft.com/en-us/ef/
+      \endverb
+      \verb{url}
+      \verb https://learn.microsoft.com/en-us/ef/
+      \endverb
+    \endentry
+    \entry{razor}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={Microsoft},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{extraname}{3}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradate}{3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Razor}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-9.0
+      \endverb
+      \verb{url}
+      \verb https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-9.0
+      \endverb
+    \endentry
+    \entry{sqlserver}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={Microsoft},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{extraname}{4}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradate}{4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{SQL Server}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver16
+      \endverb
+      \verb{url}
+      \verb https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver16
+      \endverb
+    \endentry
+    \entry{swagger}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=336ff1e9aa6177ea7a71984fa8c241b9}{%
+           family={Swagger},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \strng{fullhash}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \strng{fullhashraw}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \strng{bibnamehash}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \strng{authorbibnamehash}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \strng{authornamehash}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \strng{authorfullhash}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \strng{authorfullhashraw}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Swagger}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://swagger.io/docs/
+      \endverb
+      \verb{url}
+      \verb https://swagger.io/docs/
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{bootstrap}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=6699fc2680f2601917ba69358414fa51}{%
+           family={Bootstrap},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{6699fc2680f2601917ba69358414fa51}
+      \strng{fullhash}{6699fc2680f2601917ba69358414fa51}
+      \strng{fullhashraw}{6699fc2680f2601917ba69358414fa51}
+      \strng{bibnamehash}{6699fc2680f2601917ba69358414fa51}
+      \strng{authorbibnamehash}{6699fc2680f2601917ba69358414fa51}
+      \strng{authornamehash}{6699fc2680f2601917ba69358414fa51}
+      \strng{authorfullhash}{6699fc2680f2601917ba69358414fa51}
+      \strng{authorfullhashraw}{6699fc2680f2601917ba69358414fa51}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Bootstrap}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://getbootstrap.com/
+      \endverb
+      \verb{url}
+      \verb https://getbootstrap.com/
+      \endverb
+    \endentry
+    \entry{daw}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=750ed5ad01d6eb955be2424f4e825ff0}{%
+           family={Bruno},
+           familyi={B\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{750ed5ad01d6eb955be2424f4e825ff0}
+      \strng{fullhash}{750ed5ad01d6eb955be2424f4e825ff0}
+      \strng{fullhashraw}{750ed5ad01d6eb955be2424f4e825ff0}
+      \strng{bibnamehash}{750ed5ad01d6eb955be2424f4e825ff0}
+      \strng{authorbibnamehash}{750ed5ad01d6eb955be2424f4e825ff0}
+      \strng{authornamehash}{750ed5ad01d6eb955be2424f4e825ff0}
+      \strng{authorfullhash}{750ed5ad01d6eb955be2424f4e825ff0}
+      \strng{authorfullhashraw}{750ed5ad01d6eb955be2424f4e825ff0}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Página da Unidade Curricular de Desenvolvimento de Aplicações Web}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://cms.ipbeja.pt/course/view.php?id=1451
+      \endverb
+      \verb{url}
+      \verb https://cms.ipbeja.pt/course/view.php?id=1451
+      \endverb
+    \endentry
+    \entry{aspnet}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={Microsoft},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{extraname}{1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{ASP.NET}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-9.0
+      \endverb
+      \verb{url}
+      \verb https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-9.0
+      \endverb
+    \endentry
+    \entry{entityframework}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={Microsoft},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{extraname}{2}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Entity Framework Core}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://learn.microsoft.com/en-us/ef/
+      \endverb
+      \verb{url}
+      \verb https://learn.microsoft.com/en-us/ef/
+      \endverb
+    \endentry
+    \entry{razor}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={Microsoft},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{extraname}{3}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradate}{3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Razor}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-9.0
+      \endverb
+      \verb{url}
+      \verb https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-9.0
+      \endverb
+    \endentry
+    \entry{sqlserver}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={Microsoft},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{extraname}{4}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradate}{4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{SQL Server}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver16
+      \endverb
+      \verb{url}
+      \verb https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver16
+      \endverb
+    \endentry
+    \entry{swagger}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=336ff1e9aa6177ea7a71984fa8c241b9}{%
+           family={Swagger},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \strng{fullhash}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \strng{fullhashraw}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \strng{bibnamehash}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \strng{authorbibnamehash}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \strng{authornamehash}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \strng{authorfullhash}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \strng{authorfullhashraw}{336ff1e9aa6177ea7a71984fa8c241b9}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Swagger}
+      \field{urlday}{17}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://swagger.io/docs/
+      \endverb
+      \verb{url}
+      \verb https://swagger.io/docs/
       \endverb
     \endentry
   \enddatalist
