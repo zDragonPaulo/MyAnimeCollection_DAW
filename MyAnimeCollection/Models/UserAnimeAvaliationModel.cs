@@ -13,9 +13,9 @@ namespace Models {
         public int UserId { get; set; }
 
         public UserModel? User { get; set; }
+        
         [Required]
         public int AnimeId { get; set; }
-
 
         [Range(0, 10)]
         public float Avaliation { get; set; }

@@ -83,7 +83,8 @@ namespace MyAnimeCollection.Controllers
             {
                 new Claim(ClaimTypes.Name, user.Name),
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim("UserId", user.UserId.ToString()) // Pode ser útil
+                new Claim("UserId", user.UserId.ToString()), // Pode ser útil
+                new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
             };
 
             var claimsIdentity = new ClaimsIdentity(claims, "Cookies");

@@ -21,6 +21,65 @@
             <h5>Número de Episódios: @Model.NumberEpisodes</h5>
             <h5>Sinopse:</h5>
             <p>@Model.Synopsis</p>
+
+            <!-- Média das Avaliações -->
+            <h5>Média das Avaliações:</h5>
+            <div class="average-rating" style="font-size: 1.5rem; color: gold;">
+                @for (int i = 1; i <= 5; i++)
+                {
+                    @(i <= Math.Round(ViewBag.AverageRating) ? "★" : "☆")
+                }
+                <span style="color: black;">(@ViewBag.AverageRating.ToString("0.0") estrelas)</span>
+            </div>
+
+            <!-- Formulário de Avaliação -->
+            <h5>Avaliar este Anime:</h5>
+            <form asp-action="SubmitAvaliation" method="post">
+                <input type="hidden" name="AnimeId" value="@Model.AnimeId" />
+                <div class="rating" style="font-size: 1.5rem; color: gold;">
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        <input type="radio" id="star-@i" name="Stars" value="@i" style="display: none;" />
+                        <label for="star-@i" class="star" data-value="@i" style="cursor: pointer;">☆</label>
+                    }
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Enviar Avaliação</button>
+            </form>
         </div>
     </div>
 </div>
+
+<!-- Estilos CSS -->
+<style>
+    .star {
+        font-size: 1.5rem;
+        color: gray;
+    }
+
+    .star.filled {
+        color: gold;
+    }
+</style>
+
+<!-- Script para atualizar as estrelas -->
+<script>
+    // Função para atualizar visualmente as estrelas selecionadas
+    document.querySelectorAll('.rating').forEach(rating => {
+        const stars = rating.querySelectorAll('.star');
+        stars.forEach(star => {
+            star.addEventListener('click', function () {
+                const selectedValue = parseInt(this.getAttribute('data-value')); // Obtém o valor da estrela clicada
+                stars.forEach((s, index) => {
+                    // Preenche todas as estrelas até o valor selecionado
+                    if (index < selectedValue) {
+                        s.classList.add('filled');
+                        s.textContent = '★';
+                    } else {
+                        s.classList.remove('filled');
+                        s.textContent = '☆';
+                    }
+                });
+            });
+        });
+    });
+</script>
