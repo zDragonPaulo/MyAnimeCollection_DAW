@@ -25,6 +25,23 @@ public class AnimeApiService
         response.EnsureSuccessStatusCode();
         return await response.Content.ReadFromJsonAsync<Anime>();
     }
+
+    public async Task<List<Anime>> GetAnimesByIdsAsync(List<int> animeIds)
+    {
+        var animes = new List<Anime>();
+
+        foreach (var id in animeIds)
+        {
+            var anime = await GetAnimeAsync(id);  // Aqui é esperado um único ID
+            if (anime != null)
+            {
+                animes.Add(anime);
+            }
+        }
+
+        return animes;
+    }
+
 }
 
 public class Anime

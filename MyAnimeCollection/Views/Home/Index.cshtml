@@ -1,16 +1,9 @@
 ﻿@model List<Anime>
-
+@using Models
 @{
     ViewData["Title"] = "Página Inicial";
+    var userLists = ViewBag.UserLists as List<UserListModel>;
 }
-
-<style>
-    .fixed-image {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-    }
-</style>
 
 <div class="container">
     <h1 class="my-4">Animes</h1>
@@ -23,10 +16,77 @@
                         <img src="@anime.ImageURL" alt="@anime.Title" class="card-img-top fixed-image" />
                     </a>
                     <div class="card-body">
-                        <h5 class="card-title">@anime.Title</h5>
+                        <h5 class="card-title d-flex justify-content-between align-items-center">
+                            @anime.Title
+                            <div class="dropdown">
+                                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    +
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    @if (userLists != null && userLists.Any())
+                                    {
+                                        @foreach (var list in userLists)
+                                        {
+                                            <li>
+                                                <a class="dropdown-item add-to-list" href="javascript:void(0);" data-animeid="@anime.AnimeId" data-listid="@list.UserListId">
+                                                    @list.Name
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <li>
+                                            <span class="dropdown-item text-muted">Sem listas disponíveis</span>
+                                        </li>
+                                    }
+                                    <li>
+                                        <hr class="dropdown-divider" />
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="@Url.Action("CreateUserList", "UserList", new { animeId = anime.AnimeId })">
+                                            Criar Nova Lista
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </h5>
                     </div>
                 </div>
             </div>
         }
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+    // Quando o link para adicionar anime for clicado
+        $('.add-to-list').click(function (e) {
+            e.preventDefault();
+
+            var animeId = $(this).data('animeid');
+            var listId = $(this).data('listid');
+
+            // Faz a requisição AJAX
+            $.ajax({
+                url: '@Url.Action("AddAnimeToList", "UserList")',
+                type: 'POST',  // Mudamos para POST porque é uma operação de modificação
+                data: { animeId: animeId, listId: listId },
+                success: function (response) {
+                    if (response.success) {
+                        alert(response.message);  // Exibe a mensagem de sucesso
+                        // Opcionalmente, você pode atualizar a UI aqui, como recarregar a lista de animes
+                    } else {
+                        alert(response.message);  // Exibe a mensagem de erro
+                    }
+                },
+                error: function () {
+                    alert('Ocorreu um erro ao adicionar o anime à lista.');
+                }
+            });
+        });
+    });
+
+    </script>
+}

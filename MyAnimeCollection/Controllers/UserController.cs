@@ -16,10 +16,12 @@ namespace MyAnimeCollection.Controllers
     public class UserController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly AnimeApiService _animeApiService;
 
-        public UserController(ApplicationDbContext context)
+        public UserController(ApplicationDbContext context, AnimeApiService animeApiService)
         {
             _context = context;
+            _animeApiService = animeApiService;
         }
 
         // GET: User/Register
@@ -94,9 +96,12 @@ namespace MyAnimeCollection.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-        public IActionResult Profile(string userId)
+        public async Task<IActionResult> Profile(string userId)
         {
-            var user = _context.Users.FirstOrDefault(u => u.UserId.ToString() == userId);
+            var user = await _context.Users
+                .Include(u => u.UserList)  // Carregar as listas de usuário
+                .FirstOrDefaultAsync(u => u.UserId.ToString() == userId);
+
             if (user == null)
             {
                 ViewBag.Error = "Utilizador não encontrado.";
@@ -111,11 +116,35 @@ namespace MyAnimeCollection.Controllers
                 Biography = user.Biography
             };
 
-            // Carregar as listas de animes do utilizador
-            ViewBag.UserLists = _context.UserLists.Where(ul => ul.UserId == user.UserId).ToList();
+            // Obter as listas de animes do utilizador
+            var userLists = user.UserList;  // Apenas IDs dos animes
+
+            // Verificar se as listas existem
+            if (userLists == null || !userLists.Any())
+            {
+                ViewBag.Error = "Não há listas de anime para este usuário.";
+            }
+
+            // Se user.UserList for um HashSet, faça o cast para IEnumerable
+            ViewBag.UserLists = user.UserList.ToList();  // Agora será uma List<UserListModel>, que implementa IEnumerable
+
+            // Obter os detalhes dos animes via API (usando os IDs)
+            var animeIds = userLists.SelectMany(ul => ul.AnimeIds).Distinct().ToList();
+            var animes = new List<Anime>();
+
+            if (animeIds.Any())
+            {
+                // Recuperar os animes da API
+                animes = await _animeApiService.GetAnimesByIdsAsync(animeIds);
+            }
+
+            // Passar os animes para a View como uma lista fortemente tipada
+            ViewBag.AnimesList = animes;  // Lista de animes para a view
+
 
             return View(userModel);
         }
+
 
         // GET: User/Search
         public async Task<IActionResult> Search(string query)

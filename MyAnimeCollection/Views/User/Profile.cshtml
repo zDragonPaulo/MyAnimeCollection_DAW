@@ -1,11 +1,11 @@
 @model Models.UserModel
 
-
 <div class="container">
     <h1 class="my-4">Perfil do Utilizador</h1>
     @if (Model != null)
     {
         <div class="row">
+            <!-- Informações do Utilizador -->
             <div class="col-md-4 text-center">
                 <img src="@Model.ImageUrl" class="img-fluid rounded-circle" alt="Imagem do Utilizador"
                     style="max-width: 150px;" />
@@ -17,32 +17,51 @@
                 }
             </div>
 
+            <!-- Listas de Animes -->
             <div class="col-md-8">
-                @if (ViewBag.UserLists != null && ViewBag.UserLists.Count > 0)
-
+                @if (ViewBag.UserLists is List<Models.UserListModel> userLists && userLists.Any())
                 {
                     <h3>Listas de Anime</h3>
-                    @foreach (var list in ViewBag.UserLists)
+                    @foreach (var list in userLists)
                     {
-                        <h4>@list.Name</h4>
-                        <ul>
-                            @foreach (var animeList in list.AnimeLists)
+                        <h3>@list.Name</h3>
+                        <div class="row">
+                            @if (ViewBag.AnimesList is List<Anime> animesList)
                             {
-                                <li>@animeList.Anime.Title</li>
+                                @foreach (var animeId in list.AnimeIds)
+                                {
+                                    var anime = animesList.FirstOrDefault(a => a.AnimeId == animeId);
+                                    if (anime != null)
+                                    {
+                                        <div class="col-md-3">
+                                            <div class="card">
+                                                <a href="@Url.Action("Details", "Anime", new { id = anime.AnimeId })">
+                                                    <img src="@anime.ImageURL" class="card-img-top" alt="@anime.Title">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        <a href="@Url.Action("Details", "Anime", new { id = anime.AnimeId })">
+                                                            @anime.Title
+                                                        </a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
                             }
-                        </ul>
+                        </div>
                     }
                 }
                 else
                 {
-                    <p>Este utilizador não tem listas de anime.</p>
+                    <h5 class="text-danger">Não há listas de anime para este utilizador.</h5>
                 }
             </div>
         </div>
     }
     else
     {
-        <h5>@ViewBag.Error</h5>
+        <h5 class="text-danger">Erro ao carregar as informações do perfil.</h5>
     }
-
 </div>

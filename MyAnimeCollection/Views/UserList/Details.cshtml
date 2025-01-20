@@ -1,0 +1,36 @@
+@model Models.UserListModel
+
+@{
+    ViewData["Title"] = "Detalhes da Lista";
+}
+
+<h1><strong>Nome: </strong>@Model.Name</h1>
+<p><strong>Descrição: </strong>@Model.Description</p>
+<p><strong>Criada por: </strong>@ViewBag.CreatorName</p> <!-- Linha adicionada -->
+
+@if (ViewBag.AnimesList == null || !((List<Anime>)ViewBag.AnimesList).Any())
+{
+    <p>Não existem animes nesta lista.</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var anime in (List<Anime>)ViewBag.AnimesList)
+        {
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="@Url.Action("Details", "Anime", new { id = anime.AnimeId })">
+                        <img src="@anime.ImageURL" class="card-img-top" alt="@anime.Title" />
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="@Url.Action("Details", "Anime", new { id = anime.AnimeId })">
+                                @anime.Title
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

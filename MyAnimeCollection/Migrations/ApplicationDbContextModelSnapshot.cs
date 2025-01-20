@@ -22,27 +22,6 @@ namespace MyAnimeCollection.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Models.AnimeListModel", b =>
-                {
-                    b.Property<int>("AnimeListId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AnimeListId"));
-
-                    b.Property<int>("AnimeId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("UserListModelUserListId")
-                        .HasColumnType("int");
-
-                    b.HasKey("AnimeListId");
-
-                    b.HasIndex("UserListModelUserListId");
-
-                    b.ToTable("AnimeLists");
-                });
-
             modelBuilder.Entity("Models.UserAnimeAvaliationModel", b =>
                 {
                     b.Property<int>("UserAnimeAvaliationId")
@@ -107,8 +86,9 @@ namespace MyAnimeCollection.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserListId"));
 
-                    b.Property<int>("AnimeListId")
-                        .HasColumnType("int");
+                    b.PrimitiveCollection<string>("AnimeIds")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -124,8 +104,6 @@ namespace MyAnimeCollection.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("UserListId");
-
-                    b.HasIndex("AnimeListId");
 
                     b.HasIndex("UserId");
 
@@ -172,13 +150,6 @@ namespace MyAnimeCollection.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Models.AnimeListModel", b =>
-                {
-                    b.HasOne("Models.UserListModel", null)
-                        .WithMany("AnimeLists")
-                        .HasForeignKey("UserListModelUserListId");
-                });
-
             modelBuilder.Entity("Models.UserAnimeAvaliationModel", b =>
                 {
                     b.HasOne("Models.UserModel", "User")
@@ -211,31 +182,13 @@ namespace MyAnimeCollection.Migrations
 
             modelBuilder.Entity("Models.UserListModel", b =>
                 {
-                    b.HasOne("Models.AnimeListModel", "AnimeList")
-                        .WithMany("UserList")
-                        .HasForeignKey("AnimeListId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Models.UserModel", "User")
                         .WithMany("UserList")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("AnimeList");
-
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Models.AnimeListModel", b =>
-                {
-                    b.Navigation("UserList");
-                });
-
-            modelBuilder.Entity("Models.UserListModel", b =>
-                {
-                    b.Navigation("AnimeLists");
                 });
 
             modelBuilder.Entity("Models.UserModel", b =>

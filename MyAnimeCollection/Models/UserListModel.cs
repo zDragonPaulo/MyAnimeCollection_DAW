@@ -13,11 +13,6 @@ namespace Models {
 
         public UserModel? User { get; set; }
 
-        [ForeignKey("AnimeListId")]
-        public int AnimeListId { get; set; }
-
-        public AnimeListModel? AnimeList { get; set; }
-
         [Required]
         [MaxLength(100)]
         public string Name { get; set; }
@@ -25,6 +20,7 @@ namespace Models {
         [MaxLength(500)]
         public string Description { get; set; }
 
-        public ICollection<AnimeListModel>? AnimeLists { get; set; }
+        // Lista de IDs de Animes
+        public List<int> AnimeIds { get; set; } = new List<int>();
     }
 }

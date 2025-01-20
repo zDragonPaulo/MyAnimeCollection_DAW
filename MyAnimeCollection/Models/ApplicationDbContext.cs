@@ -10,7 +10,6 @@ namespace Models
         public DbSet<UserListModel> UserLists { get; set; }
         public DbSet<UserListAvaliationModel> UserListAvaliations { get; set; }
         public DbSet<UserAnimeAvaliationModel> UserAnimeAvaliations { get; set; }
-        public DbSet<AnimeListModel> AnimeLists { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,14 +28,11 @@ namespace Models
                 .WithMany(u => u.UserAnimeAvaliation)
                 .HasForeignKey(uaa => uaa.UserId)
                 .OnDelete(DeleteBehavior.NoAction);
-
-            // Configuração da relação entre UserListModel e UserModel
-            // Configurar o relacionamento entre UserListModel e AnimeListModel
             modelBuilder.Entity<UserListModel>()
-                .HasOne(ul => ul.AnimeList) // UserListModel tem uma referência a AnimeListModel
-                .WithMany(al => al.UserList) // AnimeListModel pode ter muitos UserListModel
-                .HasForeignKey(ul => ul.AnimeListId) // Chave estrangeira
-                .OnDelete(DeleteBehavior.Cascade); // Defina o comportamento de exclusão (pode ser outro comportamento, dependendo do seu caso)
+                .HasOne(ul => ul.User)
+                .WithMany(u => u.UserList)
+                .HasForeignKey(ul => ul.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

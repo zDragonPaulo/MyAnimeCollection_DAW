@@ -26,7 +26,7 @@ public class AnimeController : Controller
 
         // Calcular a média das avaliações
         var reviews = await _context.UserAnimeAvaliations.Where(r => r.AnimeId == id).ToListAsync();
-        var averageRating = reviews.Any() ? reviews.Average(r => r.Avaliation / 2.0 + 1) : 0;
+        var averageRating = reviews.Any() ? reviews.Average(r => r.Avaliation / 2.0) : 0;
         ViewBag.AverageRating = averageRating;
 
         return View(anime);

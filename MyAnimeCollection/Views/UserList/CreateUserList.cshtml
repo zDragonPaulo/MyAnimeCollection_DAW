@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "Criar Lista";
+}
+
+<h2>Criar Lista</h2>
+
+<form asp-action="CreateUserList" method="post">
+    <div class="form-group">
+        <label for="Name">Nome</label>
+        <input type="text" id="Name" name="name" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="Description">Descrição</label>
+        <textarea id="Description" name="description" class="form-control" required></textarea>
+    </div>
+
+    <input type="hidden" name="animeId" value="@ViewData["AnimeId"]" />
+
+    <button type="submit" class="btn btn-primary">Criar Lista</button>
+</form>
