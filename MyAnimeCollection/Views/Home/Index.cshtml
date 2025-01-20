@@ -5,16 +5,17 @@
     var userLists = ViewBag.UserLists as List<UserListModel>;
 }
 
+<!-- Main Page -->
 <div class="container">
     <h1 class="my-4">Animes</h1>
 
-    <!-- Botão para mostrar/ocultar o formulário de filtro -->
+    <!-- Button to show the filter -->
     <button class="btn btn-secondary mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#filterForm"
         aria-expanded="false" aria-controls="filterForm">
         Filtro de Melhores Avaliações
     </button>
 
-    <!-- Formulário de Filtro -->
+    <!-- Filter by date form -->
     <div class="collapse" id="filterForm">
         <form method="get" asp-action="Index" class="mb-4">
             <div class="row">
@@ -33,6 +34,7 @@
         </form>
     </div>
 
+    <!-- List of animes -->
     <div class="row">
         @foreach (var anime in Model)
         {
@@ -41,6 +43,8 @@
                     <a href="@Url.Action("Details", "Anime", new { id = anime.AnimeId })">
                         <img src="@anime.ImageURL" alt="@anime.Title" class="card-img-top fixed-image" />
                     </a>
+
+                    <!-- Dropdown to add an anime to a list -->
                     <div class="card-body">
                         <h5 class="card-title d-flex justify-content-between align-items-center">
                             @anime.Title
@@ -88,26 +92,24 @@
 </div>
 
 @section Scripts {
+    <!-- Script to add an anime to a list -->
     <script>
         $(document).ready(function () {
-            // Quando o link para adicionar anime for clicado
             $('.add-to-list').click(function (e) {
                 e.preventDefault();
 
                 var animeId = $(this).data('animeid');
                 var listId = $(this).data('listid');
 
-                // Faz a requisição AJAX
                 $.ajax({
                     url: '@Url.Action("AddAnimeToList", "UserList")',
-                    type: 'POST',  // Mudamos para POST porque é uma operação de modificação
+                    type: 'POST',
                     data: { animeId: animeId, listId: listId },
                     success: function (response) {
                         if (response.success) {
-                            alert(response.message);  // Exibe a mensagem de sucesso
-                            // Opcionalmente, você pode atualizar a UI aqui, como recarregar a lista de animes
+                            alert(response.message);
                         } else {
-                            alert(response.message);  // Exibe a mensagem de erro
+                            alert(response.message);
                         }
                     },
                     error: function () {
@@ -116,6 +118,5 @@
                 });
             });
         });
-
     </script>
 }

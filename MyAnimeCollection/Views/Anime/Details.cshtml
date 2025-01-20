@@ -4,6 +4,7 @@
     ViewData["Title"] = Model.Title;
 }
 
+<!-- Anime Details -->
 <div class="container">
     <h1 class="my-4">@Model.Title</h1>
     <div class="row">
@@ -22,7 +23,7 @@
             <h5>Sinopse:</h5>
             <p>@Model.Synopsis</p>
 
-            <!-- Média das Avaliações -->
+            <!-- Average Rating -->
             <h5>Média das Avaliações:</h5>
             <div class="average-rating" style="font-size: 1.5rem; color: gold;">
                 @for (int i = 1; i <= 5; i++)
@@ -32,7 +33,7 @@
                 <span style="color: black;">(@ViewBag.AverageRating.ToString("0.0") estrelas)</span>
             </div>
 
-            <!-- Formulário de Avaliação -->
+            <!-- Rating form -->
             <h5>Avaliar este Anime:</h5>
             <form asp-action="SubmitAvaliation" method="post">
                 <input type="hidden" name="AnimeId" value="@Model.AnimeId" />
@@ -49,7 +50,7 @@
     </div>
 </div>
 
-<!-- Estilos CSS -->
+<!-- Colors for the stars -->
 <style>
     .star {
         font-size: 1.5rem;
@@ -61,16 +62,14 @@
     }
 </style>
 
-<!-- Script para atualizar as estrelas -->
+<!-- Script to update the stars -->
 <script>
-    // Função para atualizar visualmente as estrelas selecionadas
     document.querySelectorAll('.rating').forEach(rating => {
         const stars = rating.querySelectorAll('.star');
         stars.forEach(star => {
             star.addEventListener('click', function () {
-                const selectedValue = parseInt(this.getAttribute('data-value')); // Obtém o valor da estrela clicada
+                const selectedValue = parseInt(this.getAttribute('data-value'));
                 stars.forEach((s, index) => {
-                    // Preenche todas as estrelas até o valor selecionado
                     if (index < selectedValue) {
                         s.classList.add('filled');
                         s.textContent = '★';

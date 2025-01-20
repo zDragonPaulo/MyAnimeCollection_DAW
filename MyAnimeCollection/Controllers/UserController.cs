@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Models;
 using BCrypt.Net;
-using System.Security.Claims; // Para Claim e ClaimTypes
-using Microsoft.AspNetCore.Authentication; // Para SignInAsync e SignOutAsync
-using Microsoft.AspNetCore.Authentication.Cookies; // Para autenticação baseada em cookies
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace MyAnimeCollection.Controllers
 {
@@ -18,20 +18,22 @@ namespace MyAnimeCollection.Controllers
         private readonly ApplicationDbContext _context;
         private readonly AnimeApiService _animeApiService;
 
+        // Constructor
         public UserController(ApplicationDbContext context, AnimeApiService animeApiService)
         {
             _context = context;
             _animeApiService = animeApiService;
         }
 
-        // GET: User/Register
+        // User registration
+        [HttpGet("user/register")]
         public IActionResult Register()
         {
             return View();
         }
 
-        // POST: User/Register
-        [HttpPost]
+        // User registration
+        [HttpPost("user/register")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register([Bind("Name,Password,Email,Biography,Age,ImageUrl")] UserModel userModel)
         {
@@ -44,9 +46,7 @@ namespace MyAnimeCollection.Controllers
                     return View(userModel);
                 }
 
-                // Hash da senha para segurança
                 userModel.Password = BCrypt.Net.BCrypt.HashPassword(userModel.Password);
-
                 userModel.ImageUrl = "/assets/user.png";
 
                 _context.Add(userModel);
@@ -56,14 +56,15 @@ namespace MyAnimeCollection.Controllers
             return View(userModel);
         }
 
-        // GET: User/Login
+        // User login
+        [HttpGet("user/login")]
         public IActionResult Login()
         {
             return View();
         }
 
-        // POST: User/Login
-        [HttpPost]
+        // User login
+        [HttpPost("user/login")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(string email, string password)
         {
@@ -80,22 +81,22 @@ namespace MyAnimeCollection.Controllers
                 return View();
             }
 
-            // Criar os claims do utilizador
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.Name),
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim("UserId", user.UserId.ToString()), // Pode ser útil
+                new Claim("UserId", user.UserId.ToString()),
                 new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
             };
 
             var claimsIdentity = new ClaimsIdentity(claims, "Cookies");
 
-            // Criar o cookie de autenticação
             await HttpContext.SignInAsync("Cookies", new ClaimsPrincipal(claimsIdentity));
 
             return RedirectToAction("Index", "Home");
         }
+
+        // User profile
         [HttpGet("user/{id}")]
         public async Task<IActionResult> Profile(int id)
         {
@@ -119,12 +120,11 @@ namespace MyAnimeCollection.Controllers
                 Biography = user.Biography
             };
 
-            // Configurar listas de animes e avaliações como anteriormente
             var userLists = user.UserList;
 
             if (userLists == null || !userLists.Any())
             {
-                ViewBag.Error = "Não há listas de anime para este usuário.";
+                ViewBag.Error = "Não há listas de anime para este utilizador.";
             }
             else
             {
@@ -148,9 +148,7 @@ namespace MyAnimeCollection.Controllers
             return View(userModel);
         }
 
-
-
-        // GET: User/Search
+        // Search for a user (Use Case #3)
         public async Task<IActionResult> Search(string query)
         {
             if (string.IsNullOrEmpty(query))
@@ -165,7 +163,8 @@ namespace MyAnimeCollection.Controllers
             return View(users);
         }
 
-        [HttpPost]
+        // Logout user
+        [HttpPost("user/logout")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
@@ -173,8 +172,7 @@ namespace MyAnimeCollection.Controllers
             return RedirectToAction("Login", "User");
         }
 
-
-        // GET: User/Delete/5
+        // Delete user
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -192,7 +190,7 @@ namespace MyAnimeCollection.Controllers
             return View(userModel);
         }
 
-        // POST: User/Delete/5
+        // Delete user
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -207,6 +205,7 @@ namespace MyAnimeCollection.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // Checks if user exists
         private bool UserModelExists(int id)
         {
             return _context.Users.Any(e => e.UserId == id);

@@ -15,19 +15,21 @@ namespace Models
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configuração da relação entre UserListAvaliationModel e UserModel
+            // Relation between UserListAvaliationModel and UserListModel
             modelBuilder.Entity<UserListAvaliationModel>()
                 .HasOne(ula => ula.User)
                 .WithMany(u => u.UserListAvaliation)
                 .HasForeignKey(ula => ula.UserId)
                 .OnDelete(DeleteBehavior.NoAction);
 
-            // Configuração da relação entre UserAnimeAvaliationModel e UserModel
+            // Relation between UserAnimeAvaliationModel and UserModel
             modelBuilder.Entity<UserAnimeAvaliationModel>()
                 .HasOne(uaa => uaa.User)
                 .WithMany(u => u.UserAnimeAvaliation)
                 .HasForeignKey(uaa => uaa.UserId)
                 .OnDelete(DeleteBehavior.NoAction);
+
+            // Relation between UserListModel and UserModel
             modelBuilder.Entity<UserListModel>()
                 .HasOne(ul => ul.User)
                 .WithMany(u => u.UserList)

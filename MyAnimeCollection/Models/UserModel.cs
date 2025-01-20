@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using Models;  // Importando o namespace correto
+using Models;  
 
 
 namespace Models

@@ -1,18 +1,22 @@
 @model Models.UserModel
 
+@{
+    ViewData["Title"] = Model?.Name ?? "Perfil do Utilizador";
+}
+
+<!-- User Details -->
 <div class="container">
     <h1 class="my-4">Perfil do Utilizador</h1>
     @if (Model != null)
     {
-        <!-- Informações do Utilizador -->
         <div class="row align-items-center mb-4">
-            <!-- Foto do Utilizador -->
+            <!-- User photo -->
             <div class="col-md-3 text-center">
                 <img src="@Model.ImageUrl" class="img-fluid rounded-circle" alt="Imagem do Utilizador"
                     style="max-width: 150px;" />
             </div>
 
-            <!-- Informações à direita da foto -->
+            <!-- User information -->
             <div class="col-md-9">
                 <h2>@Model.Name</h2>
                 <p><strong>Idade:</strong> @Model.Age</p>
@@ -23,7 +27,7 @@
             </div>
         </div>
 
-        <!-- Listas de Animes -->
+        <!-- Anime Lists -->
         <div class="row">
             @if (ViewBag.UserLists is List<Models.UserListModel> userLists && userLists.Any())
             {
@@ -31,16 +35,15 @@
                 @foreach (var list in userLists)
                 {
                     <div class="mb-4">
-                        <!-- Nome da Lista -->
                         <h4>
                             <a href="@Url.Action("Details", "UserList", new { id = ViewBag.UserId, id_lista = list.UserListId })">
                                 @list.Name
                             </a>
                         </h4>
 
-                        <!-- Média das Avaliações -->
+                        <!-- Average rating -->
                         @if (ViewBag.UserListRatings is Dictionary<int, double> userListRatings &&
-                           userListRatings.ContainsKey(list.UserListId))
+                       userListRatings.ContainsKey(list.UserListId))
                         {
                             <div class="average-rating" style="font-size: 1.5rem; color: gold;">
                                 @for (int i = 1; i <= 5; i++)
@@ -51,7 +54,7 @@
                             </div>
                         }
 
-                        <!-- Animes na Lista -->
+                        <!-- Animes on the list -->
                         <div class="row">
                             @if (ViewBag.AnimesList is List<Anime> animesList)
                             {
