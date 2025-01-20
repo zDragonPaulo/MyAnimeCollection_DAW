@@ -1,16 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using AnimeAPI.Data;
-using AnimeAPI.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Set the DataDirectory to the application's base directory
+// Sets the DataDirectory to the application's base directory
 AppDomain.CurrentDomain.SetData("DataDirectory", Path.Combine(Directory.GetCurrentDirectory(), "APP_Data"));
 Console.WriteLine($"DataDirectory: {AppDomain.CurrentDomain.GetData("DataDirectory")}");
 
-
-
-// Configuração do DbContext com SQL Server
+// Adds database services to the DI container
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -18,15 +15,15 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(resolvedConnectionString);
 });
 
-// Adicionar o serviço da API Jikan
+// Adds the JinkanApiService to the DI container
 builder.Services.AddHttpClient<JinkanApiService>();
 
-// Adicionar serviços essenciais
+// Adds the AnimeService to the DI container
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Adicionar CORS, se necessário (opcional)
+// Adds the CORS policy
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
@@ -39,30 +36,30 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Habilitar CORS (se configurado)
+// Enable CORS
 app.UseCors();
 
-// Middleware de redirecionamento para HTTPS
+// Middleware for HTTPS redirection
 app.UseHttpsRedirection();
 
-// Middleware de roteamento de controladores
+// Middleware for routing
 app.MapControllers();
 
-// Chamar o Seeder durante a inicialização
+// Calls the seeding method
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var context = services.GetRequiredService<ApplicationDbContext>();
     var apiService = services.GetRequiredService<JinkanApiService>();
-    await AnimeSeeder.SeedDataAsync(context, apiService);  // Chama o método de seeding
+    await AnimeSeeder.SeedDataAsync(context, apiService); 
 }
 
-// Configuração do Swagger no ambiente de desenvolvimento
+// Configures the Swagger middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-// Executa o aplicativo
+// Executes the application
 app.Run();

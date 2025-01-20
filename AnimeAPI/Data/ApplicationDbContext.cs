@@ -9,9 +9,6 @@ namespace AnimeAPI.Data
 
         public DbSet<Anime> Animes { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            // Remover a configuração relacionada aos géneros
-        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder) { }
     }
 }

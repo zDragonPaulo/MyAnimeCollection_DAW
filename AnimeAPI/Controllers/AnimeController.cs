@@ -28,7 +28,7 @@ namespace AnimeAPI.Controllers
                     a.Synopsis,
                     a.ImageURL,
                     a.NumberEpisodes,
-                    Genres = a.Genres // Aqui estamos a retornar a lista de géneros como uma lista de strings
+                    Genres = a.Genres
                 })
                 .ToListAsync();
         }
@@ -46,7 +46,7 @@ namespace AnimeAPI.Controllers
                     a.Synopsis,
                     a.ImageURL,
                     a.NumberEpisodes,
-                    Genres = a.Genres // Aqui também retornamos os géneros como uma lista de strings
+                    Genres = a.Genres
                 })
                 .FirstOrDefaultAsync();
 
@@ -56,10 +56,10 @@ namespace AnimeAPI.Controllers
             return anime;
         }
 
+        // Create a new anime
         [HttpPost]
         public async Task<ActionResult<Anime>> CreateAnime([FromBody] Anime anime)
         {
-            // Não definir o AnimeId explicitamente
             _context.Animes.Add(anime);
             await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(GetAnime), new { id = anime.AnimeId }, anime);
@@ -79,6 +79,7 @@ namespace AnimeAPI.Controllers
             return NoContent();
         }
 
+        // Delete an anime
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAnime(int id)
         {
