@@ -194,6 +194,8 @@ INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\tex\latex\l3packages\xparse\x
 INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
 INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\tex\latex\tocloft\tocloft.sty
 INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\tex\latex\tocloft\tocloft.sty
+INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\tex\latex\tools\verbatim.sty
+INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\tex\latex\tools\verbatim.sty
 INPUT .\Relatorio.aux
 INPUT .\Relatorio.aux
 INPUT Relatorio.aux
@@ -342,7 +344,12 @@ INPUT .\Recursos\Imagens\DeploymentDiagram.png
 INPUT .\Recursos\Imagens\DeploymentDiagram.png
 INPUT .\Recursos\Imagens\DeploymentDiagram.png
 INPUT .\Recursos\Imagens\DeploymentDiagram.png
+INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\tex\latex\base\omlcmr.fd
+INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\tex\latex\base\omlcmr.fd
+INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\tex\latex\base\omlcmr.fd
+INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
 INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
+INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
 INPUT Relatorio.aux
 INPUT .\Relatorio.out
 INPUT .\Relatorio.out
@@ -356,7 +363,11 @@ INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmib10.pfb
+INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmib10.pfb
 INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
+INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
+INPUT C:\Users\amant\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
