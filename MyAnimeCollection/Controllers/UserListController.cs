@@ -125,7 +125,7 @@ public class UserListController : Controller
     public async Task<IActionResult> Details(int id)
     {
         var userList = await _context.UserLists
-            .Include(ul => ul.User) // Inclui o relacionamento com o usuário
+            .Include(ul => ul.User)
             .FirstOrDefaultAsync(ul => ul.UserListId == id);
 
         if (userList == null)
@@ -133,14 +133,22 @@ public class UserListController : Controller
             return NotFound("Lista não encontrada.");
         }
 
-        // Obtenha o nome do criador da lista
-        ViewBag.CreatorName = userList.User?.Name ?? "Desconhecido";
+        // Adicionar log temporário para depuração
+        Console.WriteLine($"Lista carregada com ID: {userList.UserListId}");
 
-        // Obtenha os animes da lista via API
+        ViewBag.CreatorName = userList.User?.Name ?? "Desconhecido";
+        ViewBag.AuthenticatedUserId = GetAuthenticatedUserId();
+
         var animeIds = userList.AnimeIds;
         var animes = await _animeApiService.GetAnimesByIdsAsync(animeIds);
 
         ViewBag.AnimesList = animes;
+
+        var userId = ViewBag.AuthenticatedUserId as int?;
+        if (userId.HasValue)
+        {
+            ViewBag.UserLists = _context.UserLists.Where(ul => ul.UserId == userId.Value).ToList();
+        }
 
         return View(userList);
     }
@@ -161,5 +169,36 @@ public class UserListController : Controller
 
         throw new Exception("O utilizador autenticado não foi encontrado.");
     }
+    [HttpPost]
+    public async Task<IActionResult> RemoveAnimeFromList([FromBody] RemoveAnimeRequest request)
+    {
+        Console.WriteLine($"ID da lista recebido: {request.ListId}");
+        Console.WriteLine($"ID do anime recebido: {request.AnimeId}");
+
+        var userList = await _context.UserLists.FindAsync(request.ListId);
+
+        if (userList == null)
+        {
+            return Json(new { success = false, message = "Lista não encontrada. Por favor, recarregue a página e tente novamente." });
+        }
+
+        if (!userList.AnimeIds.Contains(request.AnimeId))
+        {
+            return Json(new { success = false, message = "Anime não está na lista." });
+        }
+
+        userList.AnimeIds.Remove(request.AnimeId);
+        await _context.SaveChangesAsync();
+
+        return Json(new { success = true, message = "Anime removido da lista com sucesso." });
+    }
+
+    public class RemoveAnimeRequest
+    {
+        public int AnimeId { get; set; }
+        public int ListId { get; set; }
+    }
+
+
 
 }

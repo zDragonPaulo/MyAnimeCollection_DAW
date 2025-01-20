@@ -2,11 +2,15 @@
 
 @{
     ViewData["Title"] = "Detalhes da Lista";
+    var userId = ViewBag.AuthenticatedUserId as int?; // ID do utilizador autenticado
 }
 
 <h1><strong>Nome: </strong>@Model.Name</h1>
 <p><strong>Descrição: </strong>@Model.Description</p>
-<p><strong>Criada por: </strong>@ViewBag.CreatorName</p> <!-- Linha adicionada -->
+<p><strong>Criada por: </strong>@ViewBag.CreatorName</p>
+<p>ID da Lista: @Model.UserListId</p>
+<div id="listDetails" data-list-id="@Model.UserListId"></div>
+
 
 @if (ViewBag.AnimesList == null || !((List<Anime>)ViewBag.AnimesList).Any())
 {
@@ -28,9 +32,112 @@ else
                                 @anime.Title
                             </a>
                         </h5>
+                        @if (userId == Model.UserId)
+                        {
+                            <div>
+                                <button class="btn btn-danger btn-sm remove-anime-btn" data-anime-id="@anime.AnimeId">
+                                    -
+                                </button>
+                                <div class="dropdown mt-2">
+                                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                        Opções
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("CreateUserList", "UserList", new { animeId = anime.AnimeId })">
+                                                Criar Nova Lista
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#" onclick="showExistingListsModal(@anime.AnimeId)">
+                                                Adicionar a Lista Existente
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
         }
     </div>
 }
+
+<!-- Modal para Adicionar a Listas Existentes -->
+<div class="modal fade" id="existingListsModal" tabindex="-1" aria-labelledby="existingListsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="existingListsModalLabel">Adicionar a Lista Existente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addToExistingListForm">
+                    <input type="hidden" id="animeIdInput" name="animeId" />
+                    <div class="mb-3">
+                        <label for="listSelect" class="form-label">Selecione uma Lista</label>
+                        <select class="form-select" id="listSelect" name="listId">
+                            @foreach (var list in ViewBag.UserLists as List<Models.UserListModel>)
+                            {
+                                <option value="@list.UserListId">@list.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Adicionar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const removeAnimeButtons = document.querySelectorAll('.remove-anime-btn');
+    const listDetails = document.getElementById('listDetails');
+    const listId = parseInt(listDetails?.dataset?.listId);
+
+    if (!listId || listId <= 0) {
+        console.error("ID da lista inválido. Verifique o carregamento da página.");
+        return;
+    }
+
+    removeAnimeButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const animeId = this.dataset.animeId;
+
+            if (!animeId) {
+                console.error("ID do anime não encontrado.");
+                return;
+            }
+
+            if (confirm("Tem certeza de que deseja remover este anime da lista?")) {
+                console.log("Removendo anime:", animeId, "da lista:", listId);
+                fetch('/UserList/RemoveAnimeFromList', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ animeId, listId }),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(data.message);
+                        if (data.success) {
+                            location.reload();
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Erro ao remover o anime:", error);
+                        alert("Ocorreu um erro ao tentar remover o anime da lista.");
+                    });
+            }
+        });
+    });
+});
+
+
+</script>
+
+

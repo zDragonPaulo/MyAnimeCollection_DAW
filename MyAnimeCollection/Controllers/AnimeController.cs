@@ -35,7 +35,20 @@ public class AnimeController : Controller
     public async Task<IActionResult> Search(string query)
     {
         var animes = await _animeApiService.GetAnimesAsync();
-        var result = animes.Where(a => a.Title.Contains(query, StringComparison.OrdinalIgnoreCase)).ToList();
+        var result = animes
+            .Where(a => !string.IsNullOrEmpty(query)
+                && a.Title.Contains(query, StringComparison.OrdinalIgnoreCase))
+            .ToList();
+
+        // Carrega as listas do usuário autenticado
+        var userId = GetAuthenticatedUserId();
+        if (userId != null)
+        {
+            ViewBag.UserLists = await _context.UserLists
+                .Where(ul => ul.UserId == userId)
+                .ToListAsync();
+        }
+
         return View(result);
     }
 
@@ -71,4 +84,18 @@ public class AnimeController : Controller
 
         return RedirectToAction("Details", new { id = AnimeId });
     }
+
+    private int? GetAuthenticatedUserId()
+    {
+        if (User.Identity != null && User.Identity.IsAuthenticated)
+        {
+            var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (int.TryParse(userIdClaim, out int userId))
+            {
+                return userId;
+            }
+        }
+        return null;
+    }
+
 }

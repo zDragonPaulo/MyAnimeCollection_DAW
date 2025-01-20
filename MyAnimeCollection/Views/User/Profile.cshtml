@@ -8,7 +8,7 @@
             <!-- Informações do Utilizador -->
             <div class="col-md-4 text-center">
                 <img src="@Model.ImageUrl" class="img-fluid rounded-circle" alt="Imagem do Utilizador"
-                    style="max-width: 150px;" />
+                     style="max-width: 150px;" />
                 <h5 class="mt-2">@Model.Name</h5>
                 <p><strong>Idade:</strong> @Model.Age</p>
                 @if (!string.IsNullOrEmpty(Model.Biography))
@@ -24,7 +24,12 @@
                     <h3>Listas de Anime</h3>
                     @foreach (var list in userLists)
                     {
-                        <h3>@list.Name</h3>
+                        <!-- Adicionado link no título da lista -->
+                        <h3>
+                            <a href="@Url.Action("Details", "UserList", new { id = list.UserListId })">
+                                @list.Name
+                            </a>
+                        </h3>
                         <div class="row">
                             @if (ViewBag.AnimesList is List<Anime> animesList)
                             {
