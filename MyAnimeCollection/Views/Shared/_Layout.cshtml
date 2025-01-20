@@ -27,8 +27,8 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-6 mb-lg-0"></ul>
 
-                    <form id="searchForm" class="d-flex mx-auto" method="get" asp-controller="Anime"
-                        asp-action="Search" style="max-width: 600px;">
+                    <form id="searchForm" class="d-flex mx-auto" method="get" asp-controller="Anime" asp-action="Search"
+                        style="max-width: 600px;">
                         <select id="searchType" class="form-select me-4" name="searchType"
                             onchange="updateController()">
                             <option value="animes">Animes</option>
@@ -44,9 +44,9 @@
                             var searchForm = document.getElementById("searchForm");
 
                             if (searchType === "animes") {
-                                searchForm.action = "/Anime/Search";
+                                searchForm.action = "/search/anime";
                             } else if (searchType === "users") {
-                                searchForm.action = "/User/Search";
+                                searchForm.action = "/search/user";
                             }
                         }
                     </script>
@@ -54,10 +54,12 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         @if (User?.Identity?.IsAuthenticated ?? false)
                         {
-                            <a class="nav-link" asp-controller="User" asp-action="Profile"
-                                asp-route-userId="@User.FindFirstValue("UserId")">
-                                <i class="fa fa-user"></i> @User.Identity.Name
-                            </a>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="User" asp-action="Profile"
+                                    asp-route-id="@User.FindFirstValue("UserId")">
+                                    <i class="fa fa-user"></i> @User.Identity.Name
+                                </a>
+                            </li>
                             <li class="nav-item">
                                 <form method="post" asp-area="" asp-controller="User" asp-action="Logout">
                                     <button class="btn btn-link nav-link">
@@ -75,6 +77,7 @@
                             </li>
                         }
                     </ul>
+
                 </div>
             </div>
         </nav>

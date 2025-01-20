@@ -39,4 +39,25 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapControllerRoute(
+    name: "user_list_details",
+    pattern: "user/{id}/{id_lista}",
+    defaults: new { controller = "UserList", action = "Details" });
+
+app.MapControllerRoute(
+    name: "userSearch",
+    pattern: "search/user",
+    defaults: new { controller = "User", action = "Search" });
+    
+app.MapControllerRoute(
+    name: "animeSearch",
+    pattern: "search/anime",
+    defaults: new { controller = "Anime", action = "Search" });
+
+app.MapControllerRoute(
+    name: "userProfile",
+    pattern: "user/{id}",
+    defaults: new { controller = "User", action = "Profile" });
+
+app.Run();
 app.Run();

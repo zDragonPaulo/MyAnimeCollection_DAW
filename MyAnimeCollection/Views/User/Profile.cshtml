@@ -4,35 +4,43 @@
     <h1 class="my-4">Perfil do Utilizador</h1>
     @if (Model != null)
     {
-        <div class="row">
-            <!-- Informações do Utilizador -->
-            <div class="col-md-4 text-center">
+        <!-- Informações do Utilizador -->
+        <div class="row align-items-center mb-4">
+            <!-- Foto do Utilizador -->
+            <div class="col-md-3 text-center">
                 <img src="@Model.ImageUrl" class="img-fluid rounded-circle" alt="Imagem do Utilizador"
                     style="max-width: 150px;" />
-                <h5 class="mt-2">@Model.Name</h5>
+            </div>
+
+            <!-- Informações à direita da foto -->
+            <div class="col-md-9">
+                <h2>@Model.Name</h2>
                 <p><strong>Idade:</strong> @Model.Age</p>
                 @if (!string.IsNullOrEmpty(Model.Biography))
                 {
                     <p><strong>Biografia:</strong> @Model.Biography</p>
                 }
             </div>
+        </div>
 
-            <!-- Listas de Animes -->
-            <div class="col-md-8">
-                @if (ViewBag.UserLists is List<Models.UserListModel> userLists && userLists.Any())
+        <!-- Listas de Animes -->
+        <div class="row">
+            @if (ViewBag.UserLists is List<Models.UserListModel> userLists && userLists.Any())
+            {
+                <h3 class="mb-4">Listas de Anime</h3>
+                @foreach (var list in userLists)
                 {
-                    <h3>Listas de Anime</h3>
-                    @foreach (var list in userLists)
-                    {
-                        <!-- Adicionado link no título da lista -->
-                        <h3>
-                            <a href="@Url.Action("Details", "UserList", new { id = list.UserListId })">
+                    <div class="mb-4">
+                        <!-- Nome da Lista -->
+                        <h4>
+                            <a href="@Url.Action("Details", "UserList", new { id = ViewBag.UserId, id_lista = list.UserListId })">
                                 @list.Name
                             </a>
-                        </h3>
+                        </h4>
+
                         <!-- Média das Avaliações -->
                         @if (ViewBag.UserListRatings is Dictionary<int, double> userListRatings &&
-                       userListRatings.ContainsKey(list.UserListId))
+                           userListRatings.ContainsKey(list.UserListId))
                         {
                             <div class="average-rating" style="font-size: 1.5rem; color: gold;">
                                 @for (int i = 1; i <= 5; i++)
@@ -42,6 +50,8 @@
                                 <span style="color: black;">(@userListRatings[list.UserListId].ToString("0.0") estrelas)</span>
                             </div>
                         }
+
+                        <!-- Animes na Lista -->
                         <div class="row">
                             @if (ViewBag.AnimesList is List<Anime> animesList)
                             {
@@ -68,13 +78,13 @@
                                 }
                             }
                         </div>
-                    }
+                    </div>
                 }
-                else
-                {
-                    <h5 class="text-danger">Não há listas de anime para este utilizador.</h5>
-                }
-            </div>
+            }
+            else
+            {
+                <h5 class="text-danger">Não há listas de anime para este utilizador.</h5>
+            }
         </div>
     }
     else

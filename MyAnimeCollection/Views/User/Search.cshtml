@@ -20,8 +20,7 @@
                         <div class="card-body">
                             <h5 class="card-title">@user.Name</h5>
                             <p class="card-text">@user.Email</p>
-                            <a href="@Url.Action("Profile", "User", new { userId = user.UserId })" class="btn btn-primary">Ver
-                                Perfil</a>
+                            <a href="@Url.Action("Profile", "User", new { id = user.UserId })" class="btn btn-primary">Ver Perfil</a>
                         </div>
                     </div>
                 </div>

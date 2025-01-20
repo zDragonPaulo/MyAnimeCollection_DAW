@@ -119,12 +119,13 @@ public class UserListController : Controller
     }
 
     // 5. Visualizar uma lista
-    [HttpGet]
-    public async Task<IActionResult> Details(int id)
+    [HttpGet("user/{id}/{id_lista}")]
+    public async Task<IActionResult> Details(int id, int id_lista)
     {
+        // `id_lista` será usado para buscar a lista específica
         var userList = await _context.UserLists
             .Include(ul => ul.User)
-            .FirstOrDefaultAsync(ul => ul.UserListId == id);
+            .FirstOrDefaultAsync(ul => ul.UserListId == id_lista && ul.UserId == id);
 
         if (userList == null)
         {
@@ -144,7 +145,7 @@ public class UserListController : Controller
 
         // Calcular a média das avaliações
         var ratings = await _context.UserListAvaliations
-            .Where(r => r.UserListId == id)
+            .Where(r => r.UserListId == id_lista)
             .ToListAsync();
 
         var averageRating = ratings.Any() ? ratings.Average(r => r.Avaliation / 2.0) : 0;
@@ -152,6 +153,7 @@ public class UserListController : Controller
 
         return View(userList);
     }
+
 
     // 6. Submeter avaliação de uma lista
     [HttpPost]
