@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber Relatorio"] 1737380632.27767 "Relatorio.bcf" "Relatorio.bbl" "Relatorio" 1737381181.44306 0
+["biber Relatorio"] 1737406440.97589 "Relatorio.bcf" "Relatorio.bbl" "Relatorio" 1737406496.6539 0
   "Recursos/referencias.bib" 1737377523 1717 b4c0e11ced474e4f9c926918609cc42d ""
-  "Relatorio.bcf" 1737381181 134169 53e13138c634005c26b17418075110c4 "pdflatex"
+  "Relatorio.bcf" 1737406496 134234 a45517d65042d863b7a0c9a21f973d2a "pdflatex"
   (generated)
   "Relatorio.bbl"
   "Relatorio.blg"
   (rewritten before read)
-["pdflatex"] 1737381178.16182 "c:/Users/amant/Documents/ESTIG/DAW/MyAnimeCollection_DAW/Relatórios/Relatorio.tex" "Relatorio.pdf" "Relatorio" 1737381181.44421 0
+["pdflatex"] 1737406492.82291 "c:/Users/amant/Documents/ESTIG/DAW/MyAnimeCollection_DAW/Relatórios/Relatorio.tex" "Relatorio.pdf" "Relatorio" 1737406496.65489 0
   "C:/Users/amant/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1737218725 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/amant/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1200.pk" 1737218380 15080 9984d0500390e1719a2c0f4973747c5b ""
   "C:/Users/amant/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1729008071 11548 798599d7503e14c177053c12b89ea97b ""
@@ -16,13 +16,11 @@
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
-  "C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmib10.tfm" 1136765053 1524 554068197b70979a55370e6c6495f441 ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmr12.tfm" 1136765053 1288 655e228510b4c2a1abe905c368440826 ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti10.tfm" 1136765053 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmtt10.tfm" 1136765053 768 1321e9409b4137d6fb428ac9dc956269 ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
-  "C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb" 1247596666 36912 b448ef9ad9d7228ec3c6e71005136d55 ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247596667 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1247596667 31099 342ef5a582aacbd3346f3cf4579679fa ""
@@ -64,7 +62,6 @@
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/tex/latex/base/atveryend-ltx.sty" 1719393830 2378 05fbb4f2b23b0e142f8cd3440c37e72e ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/tex/latex/base/ifthen.sty" 1719393830 5525 3792dcd5bc92158cfaf00cc591e557cf ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/tex/latex/base/inputenc.sty" 1719393830 5048 7ebf0f2edf1ef6783e8fe2201a95d0e8 ""
-  "C:/Users/amant/AppData/Local/Programs/MiKTeX/tex/latex/base/omlcmr.fd" 1719393830 2470 ec0f30a4dee212b06d8724b94d7d4f9a ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/tex/latex/base/size10.clo" 1719393830 8448 358bf3de18513f057a13bdc6e6770c41 ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/tex/latex/biblatex-apa/apa.bbx" 1680859608 68546 9e1a16021ee55f6bb5378029f145647b ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/tex/latex/biblatex-apa/apa.cbx" 1680859608 20499 0ad31db7b661b1a75fb75fe9aa337922 ""
@@ -133,14 +130,15 @@
   "Recursos/Imagens/Storyboard.png" 1737139431 531282 3c73a176f90f8bef8fd07ccce32311b9 ""
   "Recursos/Logos/IPBejaESTIG.jpg" 1737130798 24524 8256cc09fbb9140893a7ec292a0eb389 ""
   "Recursos/Logos/LOGO_IPB.png" 1737130798 70931 8e4fd2cd3676e6d3adc0f137d7334c9f ""
-  "Relatorio.aux" 1737381181 9850 92c39fe2c676d78a0a6101d3efdefc85 "pdflatex"
-  "Relatorio.bbl" 1737380635 20855 160b9c282967efabf93086e57231bad1 "biber Relatorio"
-  "Relatorio.lof" 1737381181 892 31ac27e5cefde845d3e52161d1921f6a "pdflatex"
-  "Relatorio.out" 1737381181 9203 5f6ea25b4cb50f4d901aacbcd32daf69 "pdflatex"
-  "Relatorio.run.xml" 1737381181 2410 717c0927f41f216f3cf4bba59bbfc439 "pdflatex"
-  "Relatorio.tex" 1737381177 35068 1ea5284c960e31c6981a7e445bef9574 ""
-  "Relatorio.toc" 1737381181 3987 4b04cdd3624b441b4624e36402c9d5ad "pdflatex"
-  "c:/Users/amant/Documents/ESTIG/DAW/MyAnimeCollection_DAW/Relatórios/Relatorio.tex" 1737381177 35068 1ea5284c960e31c6981a7e445bef9574 ""
+  "Recursos/referencias.bib" 1737377523 1717 b4c0e11ced474e4f9c926918609cc42d ""
+  "Relatorio.aux" 1737406496 11455 677f32b181c46bf729b6b1b62e26da08 "pdflatex"
+  "Relatorio.bbl" 1737406444 23677 c97527af63092d42115ad0cc98b63f6c "biber Relatorio"
+  "Relatorio.lof" 1737406496 892 31ac27e5cefde845d3e52161d1921f6a "pdflatex"
+  "Relatorio.out" 1737406496 9472 35731c0aade4650bd393cfcb2065c51e "pdflatex"
+  "Relatorio.run.xml" 1737406496 2410 717c0927f41f216f3cf4bba59bbfc439 "pdflatex"
+  "Relatorio.tex" 1737406488 39496 bf5e44c3a352ed1ed0128c18add42b79 ""
+  "Relatorio.toc" 1737406496 4083 9bf48cbbb33328edb91b5dd1ec2633d6 "pdflatex"
+  "c:/Users/amant/Documents/ESTIG/DAW/MyAnimeCollection_DAW/Relatórios/Relatorio.tex" 1737406488 39496 bf5e44c3a352ed1ed0128c18add42b79 ""
   (generated)
   "Relatorio.aux"
   "Relatorio.bcf"
