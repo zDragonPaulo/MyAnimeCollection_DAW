@@ -7,6 +7,32 @@
 
 <div class="container">
     <h1 class="my-4">Animes</h1>
+
+    <!-- Botão para mostrar/ocultar o formulário de filtro -->
+    <button class="btn btn-secondary mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#filterForm"
+        aria-expanded="false" aria-controls="filterForm">
+        Filtro de Melhores Avaliações
+    </button>
+
+    <!-- Formulário de Filtro -->
+    <div class="collapse" id="filterForm">
+        <form method="get" asp-action="Index" class="mb-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="startDate">Data de Início</label>
+                    <input type="date" id="startDate" name="startDate" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label for="endDate">Data de Fim</label>
+                    <input type="date" id="endDate" name="endDate" class="form-control" />
+                </div>
+                <div class="col-md-4 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary">Filtrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
     <div class="row">
         @foreach (var anime in Model)
         {
@@ -19,7 +45,8 @@
                         <h5 class="card-title d-flex justify-content-between align-items-center">
                             @anime.Title
                             <div class="dropdown">
-                                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     +
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -28,7 +55,8 @@
                                         @foreach (var list in userLists)
                                         {
                                             <li>
-                                                <a class="dropdown-item add-to-list" href="javascript:void(0);" data-animeid="@anime.AnimeId" data-listid="@list.UserListId">
+                                                <a class="dropdown-item add-to-list" href="javascript:void(0);"
+                                                    data-animeid="@anime.AnimeId" data-listid="@list.UserListId">
                                                     @list.Name
                                                 </a>
                                             </li>
@@ -44,7 +72,8 @@
                                         <hr class="dropdown-divider" />
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="@Url.Action("CreateUserList", "UserList", new { animeId = anime.AnimeId })">
+                                        <a class="dropdown-item"
+                                            href="@Url.Action("CreateUserList", "UserList", new { animeId = anime.AnimeId })">
                                             Criar Nova Lista
                                         </a>
                                     </li>
@@ -61,32 +90,32 @@
 @section Scripts {
     <script>
         $(document).ready(function () {
-    // Quando o link para adicionar anime for clicado
-        $('.add-to-list').click(function (e) {
-            e.preventDefault();
+            // Quando o link para adicionar anime for clicado
+            $('.add-to-list').click(function (e) {
+                e.preventDefault();
 
-            var animeId = $(this).data('animeid');
-            var listId = $(this).data('listid');
+                var animeId = $(this).data('animeid');
+                var listId = $(this).data('listid');
 
-            // Faz a requisição AJAX
-            $.ajax({
-                url: '@Url.Action("AddAnimeToList", "UserList")',
-                type: 'POST',  // Mudamos para POST porque é uma operação de modificação
-                data: { animeId: animeId, listId: listId },
-                success: function (response) {
-                    if (response.success) {
-                        alert(response.message);  // Exibe a mensagem de sucesso
-                        // Opcionalmente, você pode atualizar a UI aqui, como recarregar a lista de animes
-                    } else {
-                        alert(response.message);  // Exibe a mensagem de erro
+                // Faz a requisição AJAX
+                $.ajax({
+                    url: '@Url.Action("AddAnimeToList", "UserList")',
+                    type: 'POST',  // Mudamos para POST porque é uma operação de modificação
+                    data: { animeId: animeId, listId: listId },
+                    success: function (response) {
+                        if (response.success) {
+                            alert(response.message);  // Exibe a mensagem de sucesso
+                            // Opcionalmente, você pode atualizar a UI aqui, como recarregar a lista de animes
+                        } else {
+                            alert(response.message);  // Exibe a mensagem de erro
+                        }
+                    },
+                    error: function () {
+                        alert('Ocorreu um erro ao adicionar o anime à lista.');
                     }
-                },
-                error: function () {
-                    alert('Ocorreu um erro ao adicionar o anime à lista.');
-                }
+                });
             });
         });
-    });
 
     </script>
 }

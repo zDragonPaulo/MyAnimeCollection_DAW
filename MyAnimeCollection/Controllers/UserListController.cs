@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using Microsoft.EntityFrameworkCore;
-
+using System.Security.Claims;
 
 
 public class UserListController : Controller
@@ -38,8 +38,6 @@ public class UserListController : Controller
 
         return Json(new { success = true, message = "Anime adicionado à lista!" });
     }
-
-
 
     // 2. Criar uma lista
     [HttpGet]
@@ -133,8 +131,8 @@ public class UserListController : Controller
             return NotFound("Lista não encontrada.");
         }
 
-        // Adicionar log temporário para depuração
-        Console.WriteLine($"Lista carregada com ID: {userList.UserListId}");
+        var userLists = await _context.UserLists.ToListAsync();
+        ViewBag.UserLists = userLists;
 
         ViewBag.CreatorName = userList.User?.Name ?? "Desconhecido";
         ViewBag.AuthenticatedUserId = GetAuthenticatedUserId();
@@ -144,17 +142,61 @@ public class UserListController : Controller
 
         ViewBag.AnimesList = animes;
 
-        var userId = ViewBag.AuthenticatedUserId as int?;
-        if (userId.HasValue)
-        {
-            ViewBag.UserLists = _context.UserLists.Where(ul => ul.UserId == userId.Value).ToList();
-        }
+        // Calcular a média das avaliações
+        var ratings = await _context.UserListAvaliations
+            .Where(r => r.UserListId == id)
+            .ToListAsync();
+
+        var averageRating = ratings.Any() ? ratings.Average(r => r.Avaliation / 2.0) : 0;
+        ViewBag.AverageRating = averageRating;
 
         return View(userList);
     }
 
+    // 6. Submeter avaliação de uma lista
+    [HttpPost]
+    public async Task<IActionResult> SubmitListRating(int listId, int stars)
+    {
+        if (!User.Identity.IsAuthenticated)
+        {
+            return Unauthorized("User is not authenticated");
+        }
 
+        var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (string.IsNullOrEmpty(userIdString))
+        {
+            return BadRequest("User ID claim not found");
+        }
 
+        if (!int.TryParse(userIdString, out int userId))
+        {
+            return BadRequest("Invalid user ID");
+        }
+
+        var rating = new UserListAvaliationModel
+        {
+            UserListId = listId,
+            UserId = userId,
+            Avaliation = stars * 2, // Converte estrelas para a escala de 0 a 10
+            DateCreated = DateTime.UtcNow
+        };
+
+        _context.UserListAvaliations.Add(rating);
+        await _context.SaveChangesAsync();
+
+        return RedirectToAction("Details", new { id = listId });
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetUserLists()
+    {
+        var userId = GetAuthenticatedUserId();
+        var userLists = await _context.UserLists
+            .Where(ul => ul.UserId == userId)
+            .ToListAsync();
+
+        return Json(userLists);
+    }
 
     private int GetAuthenticatedUserId()
     {

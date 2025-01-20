@@ -8,7 +8,7 @@
             <!-- Informações do Utilizador -->
             <div class="col-md-4 text-center">
                 <img src="@Model.ImageUrl" class="img-fluid rounded-circle" alt="Imagem do Utilizador"
-                     style="max-width: 150px;" />
+                    style="max-width: 150px;" />
                 <h5 class="mt-2">@Model.Name</h5>
                 <p><strong>Idade:</strong> @Model.Age</p>
                 @if (!string.IsNullOrEmpty(Model.Biography))
@@ -30,6 +30,18 @@
                                 @list.Name
                             </a>
                         </h3>
+                        <!-- Média das Avaliações -->
+                        @if (ViewBag.UserListRatings is Dictionary<int, double> userListRatings &&
+                       userListRatings.ContainsKey(list.UserListId))
+                        {
+                            <div class="average-rating" style="font-size: 1.5rem; color: gold;">
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    @(i <= Math.Round(userListRatings[list.UserListId]) ? "★" : "☆")
+                                }
+                                <span style="color: black;">(@userListRatings[list.UserListId].ToString("0.0") estrelas)</span>
+                            </div>
+                        }
                         <div class="row">
                             @if (ViewBag.AnimesList is List<Anime> animesList)
                             {

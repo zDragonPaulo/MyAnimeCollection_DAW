@@ -8,9 +8,32 @@
 <h1><strong>Nome: </strong>@Model.Name</h1>
 <p><strong>Descrição: </strong>@Model.Description</p>
 <p><strong>Criada por: </strong>@ViewBag.CreatorName</p>
-<p>ID da Lista: @Model.UserListId</p>
-<div id="listDetails" data-list-id="@Model.UserListId"></div>
 
+<!-- Média das Avaliações -->
+<h5>Média das Avaliações:</h5>
+<div class="average-rating" style="font-size: 1.5rem; color: gold;">
+    @for (int i = 1; i <= 5; i++)
+    {
+        @(i <= Math.Round(ViewBag.AverageRating) ? "★" : "☆")
+    }
+    <span style="color: black;">(@ViewBag.AverageRating.ToString("0.0") estrelas)</span>
+</div>
+
+<!-- Formulário de Avaliação -->
+<h5>Avaliar esta Lista:</h5>
+<form asp-action="SubmitListRating" method="post">
+    <input type="hidden" name="listId" value="@Model.UserListId" />
+    <div class="rating" style="font-size: 1.5rem; color: gold;">
+        @for (int i = 1; i <= 5; i++)
+        {
+            <input type="radio" id="star-@i" name="stars" value="@i" style="display: none;" />
+            <label for="star-@i" class="star" data-value="@i" style="cursor: pointer;">☆</label>
+        }
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Enviar Avaliação</button>
+</form>
+
+<div id="listDetails" data-list-id="@Model.UserListId"></div>
 
 @if (ViewBag.AnimesList == null || !((List<Anime>)ViewBag.AnimesList).Any())
 {
@@ -40,12 +63,13 @@ else
                                 </button>
                                 <div class="dropdown mt-2">
                                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                        data-bs-toggle="dropdown" aria-expanded="false">
                                         Opções
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <li>
-                                            <a class="dropdown-item" href="@Url.Action("CreateUserList", "UserList", new { animeId = anime.AnimeId })">
+                                            <a class="dropdown-item"
+                                                href="@Url.Action("CreateUserList", "UserList", new { animeId = anime.AnimeId })">
                                                 Criar Nova Lista
                                             </a>
                                         </li>
@@ -66,7 +90,8 @@ else
 }
 
 <!-- Modal para Adicionar a Listas Existentes -->
-<div class="modal fade" id="existingListsModal" tabindex="-1" aria-labelledby="existingListsModalLabel" aria-hidden="true">
+<div class="modal fade" id="existingListsModal" tabindex="-1" aria-labelledby="existingListsModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -79,10 +104,7 @@ else
                     <div class="mb-3">
                         <label for="listSelect" class="form-label">Selecione uma Lista</label>
                         <select class="form-select" id="listSelect" name="listId">
-                            @foreach (var list in ViewBag.UserLists as List<Models.UserListModel>)
-                            {
-                                <option value="@list.UserListId">@list.Name</option>
-                            }
+                            <!-- Options will be populated dynamically -->
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Adicionar</button>
@@ -93,51 +115,106 @@ else
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const removeAnimeButtons = document.querySelectorAll('.remove-anime-btn');
-    const listDetails = document.getElementById('listDetails');
-    const listId = parseInt(listDetails?.dataset?.listId);
+    function showExistingListsModal(animeId) {
+        $('#animeIdInput').val(animeId);
 
-    if (!listId || listId <= 0) {
-        console.error("ID da lista inválido. Verifique o carregamento da página.");
-        return;
-    }
-
-    removeAnimeButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const animeId = this.dataset.animeId;
-
-            if (!animeId) {
-                console.error("ID do anime não encontrado.");
-                return;
-            }
-
-            if (confirm("Tem certeza de que deseja remover este anime da lista?")) {
-                console.log("Removendo anime:", animeId, "da lista:", listId);
-                fetch('/UserList/RemoveAnimeFromList', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ animeId, listId }),
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        alert(data.message);
-                        if (data.success) {
-                            location.reload();
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Erro ao remover o anime:", error);
-                        alert("Ocorreu um erro ao tentar remover o anime da lista.");
-                    });
+        $.ajax({
+            url: '@Url.Action("GetUserLists", "UserList")',
+            type: 'GET',
+            success: function (data) {
+                var listSelect = $('#listSelect');
+                listSelect.empty();
+                data.forEach(function (list) {
+                    listSelect.append(new Option(list.name, list.userListId));
+                });
+                $('#existingListsModal').modal('show');
+            },
+            error: function () {
+                alert('Erro ao carregar as listas do utilizador.');
             }
         });
-    });
-});
+    }
+</script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const removeAnimeButtons = document.querySelectorAll('.remove-anime-btn');
+        const listDetails = document.getElementById('listDetails');
+        const listId = parseInt(listDetails?.dataset?.listId);
+
+        if (!listId || listId <= 0) {
+            console.error("ID da lista inválido. Verifique o carregamento da página.");
+            return;
+        }
+
+        removeAnimeButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const animeId = this.dataset.animeId;
+
+                if (!animeId) {
+                    console.error("ID do anime não encontrado.");
+                    return;
+                }
+
+                if (confirm("Tem certeza de que deseja remover este anime da lista?")) {
+                    console.log("Removendo anime:", animeId, "da lista:", listId);
+                    fetch('/UserList/RemoveAnimeFromList', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ animeId, listId }),
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            alert(data.message);
+                            if (data.success) {
+                                location.reload();
+                            }
+                        })
+                        .catch(error => {
+                            console.error("Erro ao remover o anime:", error);
+                            alert("Ocorreu um erro ao tentar remover o anime da lista.");
+                        });
+                }
+            });
+        });
+    });
 
 </script>
 
 
+<!-- Estilos CSS -->
+<style>
+    .star {
+        font-size: 1.5rem;
+        color: gray;
+    }
+
+    .star.filled {
+        color: gold;
+    }
+</style>
+
+<!-- Script para atualizar as estrelas -->
+<script>
+    // Função para atualizar visualmente as estrelas selecionadas
+    document.querySelectorAll('.rating').forEach(rating => {
+        const stars = rating.querySelectorAll('.star');
+        stars.forEach(star => {
+            star.addEventListener('click', function () {
+                const selectedValue = parseInt(this.getAttribute('data-value')); // Obtém o valor da estrela clicada
+                stars.forEach((s, index) => {
+                    // Preenche todas as estrelas até o valor selecionado
+                    if (index < selectedValue) {
+                        s.classList.add('filled');
+                        s.textContent = '★';
+                    } else {
+                        s.classList.remove('filled');
+                        s.textContent = '☆';
+                    }
+                });
+            });
+        });
+    });
+</script>

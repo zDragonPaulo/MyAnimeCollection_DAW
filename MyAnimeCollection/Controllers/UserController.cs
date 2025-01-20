@@ -124,6 +124,20 @@ namespace MyAnimeCollection.Controllers
             {
                 ViewBag.Error = "Não há listas de anime para este usuário.";
             }
+            else
+            {
+                // Calcular a média das avaliações para cada lista
+                var userListRatings = new Dictionary<int, double>();
+                foreach (var list in userLists)
+                {
+                    var ratings = await _context.UserListAvaliations
+                        .Where(r => r.UserListId == list.UserListId)
+                        .ToListAsync();
+                    var averageRating = ratings.Any() ? ratings.Average(r => r.Avaliation / 2.0) : 0;
+                    userListRatings[list.UserListId] = averageRating;
+                }
+                ViewBag.UserListRatings = userListRatings;
+            }
 
             // Se user.UserList for um HashSet, faça o cast para IEnumerable
             ViewBag.UserLists = user.UserList.ToList();  // Agora será uma List<UserListModel>, que implementa IEnumerable
