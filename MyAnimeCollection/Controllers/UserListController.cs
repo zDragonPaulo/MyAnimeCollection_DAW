@@ -7,15 +7,16 @@ using System.Security.Claims;
 public class UserListController : Controller
 {
     private readonly ApplicationDbContext _context;
-    private readonly AnimeApiService _animeApiService; // Serviço para interação com a API
+    private readonly AnimeApiService _animeApiService;
 
+    // Constructor
     public UserListController(ApplicationDbContext context, AnimeApiService animeApiService)
     {
         _context = context;
         _animeApiService = animeApiService;
     }
 
-    // 1. Adicionar um anime a uma lista
+    // Add anime to a list (Use Case #2)
     [HttpPost]
     public async Task<IActionResult> AddAnimeToList(int animeId, int listId)
     {
@@ -26,20 +27,18 @@ public class UserListController : Controller
             return Json(new { success = false, message = "Lista não encontrada." });
         }
 
-        // Verificar se o anime já está na lista, utilizando o ID
         if (userList.AnimeIds.Contains(animeId))
         {
             return Json(new { success = false, message = "Anime já está na lista." });
         }
 
-        // Adiciona o anime à lista (apenas o ID, pois AnimeIds é uma lista de IDs)
         userList.AnimeIds.Add(animeId);
         await _context.SaveChangesAsync();
 
         return Json(new { success = true, message = "Anime adicionado à lista!" });
     }
 
-    // 2. Criar uma lista
+    // Create a list
     [HttpGet]
     public IActionResult CreateUserList(int? animeId)
     {
@@ -47,14 +46,14 @@ public class UserListController : Controller
         return View();
     }
 
+    //Create a list
     [HttpPost]
     public IActionResult CreateUserList(string name, string description, int? animeId)
     {
         try
         {
-            var userId = GetAuthenticatedUserId(); // Obter o ID do utilizador autenticado.
+            var userId = GetAuthenticatedUserId();
 
-            // Verificar se o utilizador existe na base de dados
             var userExists = _context.Users.Any(u => u.UserId == userId);
             if (!userExists)
             {
@@ -80,13 +79,11 @@ public class UserListController : Controller
         }
     }
 
-
-    // 3. Eliminar uma lista
+    // Delete a list
     [HttpPost]
     public IActionResult DeleteList(int listId)
     {
         var userList = _context.UserLists.FirstOrDefault(ul => ul.UserListId == listId);
-
         if (userList == null)
         {
             return NotFound("Lista não encontrada.");
@@ -98,12 +95,11 @@ public class UserListController : Controller
         return RedirectToAction("Index", "Home");
     }
 
-    // 4. Alterar uma lista
+    // Change a list
     [HttpPost]
     public IActionResult UpdateList(int listId, string name, string description, List<int> animeIds)
     {
         var userList = _context.UserLists.FirstOrDefault(ul => ul.UserListId == listId);
-
         if (userList == null)
         {
             return NotFound("Lista não encontrada.");
@@ -118,11 +114,10 @@ public class UserListController : Controller
         return RedirectToAction("Details", new { id = listId });
     }
 
-    // 5. Visualizar uma lista
+    // Details of a list
     [HttpGet("user/{id}/{id_lista}")]
     public async Task<IActionResult> Details(int id, int id_lista)
     {
-        // `id_lista` será usado para buscar a lista específica
         var userList = await _context.UserLists
             .Include(ul => ul.User)
             .FirstOrDefaultAsync(ul => ul.UserListId == id_lista && ul.UserId == id);
@@ -143,7 +138,6 @@ public class UserListController : Controller
 
         ViewBag.AnimesList = animes;
 
-        // Calcular a média das avaliações
         var ratings = await _context.UserListAvaliations
             .Where(r => r.UserListId == id_lista)
             .ToListAsync();
@@ -154,32 +148,31 @@ public class UserListController : Controller
         return View(userList);
     }
 
-
-    // 6. Submeter avaliação de uma lista
+    // Rate another users list (Use Case #4)
     [HttpPost]
     public async Task<IActionResult> SubmitListRating(int listId, int stars)
     {
         if (!User.Identity.IsAuthenticated)
         {
-            return Unauthorized("User is not authenticated");
+            return Unauthorized("O utilizador não está autenticado!");
         }
 
         var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
         if (string.IsNullOrEmpty(userIdString))
         {
-            return BadRequest("User ID claim not found");
+            return BadRequest("Id do utilizador não encontrado!");
         }
 
         if (!int.TryParse(userIdString, out int userId))
         {
-            return BadRequest("Invalid user ID");
+            return BadRequest("Id do utilizador inválido!");
         }
 
         var rating = new UserListAvaliationModel
         {
             UserListId = listId,
             UserId = userId,
-            Avaliation = stars * 2, // Converte estrelas para a escala de 0 a 10
+            Avaliation = stars * 2, 
             DateCreated = DateTime.UtcNow
         };
 
@@ -189,6 +182,7 @@ public class UserListController : Controller
         return RedirectToAction("Details", new { id = listId });
     }
 
+    // Get all lists of a user
     [HttpGet]
     public async Task<IActionResult> GetUserLists()
     {
@@ -200,6 +194,7 @@ public class UserListController : Controller
         return Json(userLists);
     }
 
+    // Returns the authenticated user ID
     private int GetAuthenticatedUserId()
     {
         if (User.Identity != null && User.Identity.IsAuthenticated)
@@ -210,9 +205,10 @@ public class UserListController : Controller
                 return userId;
             }
         }
-
         throw new Exception("O utilizador autenticado não foi encontrado.");
     }
+
+    // Remove anime from a list
     [HttpPost]
     public async Task<IActionResult> RemoveAnimeFromList([FromBody] RemoveAnimeRequest request)
     {
@@ -237,12 +233,10 @@ public class UserListController : Controller
         return Json(new { success = true, message = "Anime removido da lista com sucesso." });
     }
 
+    // Remove anime from a list
     public class RemoveAnimeRequest
     {
         public int AnimeId { get; set; }
         public int ListId { get; set; }
     }
-
-
-
 }

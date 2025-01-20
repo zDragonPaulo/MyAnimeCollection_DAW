@@ -2,14 +2,15 @@
 
 @{
     ViewData["Title"] = "Detalhes da Lista";
-    var userId = ViewBag.AuthenticatedUserId as int?; // ID do utilizador autenticado
+    var userId = ViewBag.AuthenticatedUserId as int?;
 }
 
+<!-- UserList Details -->
 <h1><strong>Nome: </strong>@Model.Name</h1>
 <p><strong>Descrição: </strong>@Model.Description</p>
 <p><strong>Criada por: </strong>@ViewBag.CreatorName</p>
 
-<!-- Média das Avaliações -->
+<!-- Average rating -->
 <h5>Média das Avaliações:</h5>
 <div class="average-rating" style="font-size: 1.5rem; color: gold;">
     @for (int i = 1; i <= 5; i++)
@@ -19,7 +20,7 @@
     <span style="color: black;">(@ViewBag.AverageRating.ToString("0.0") estrelas)</span>
 </div>
 
-<!-- Formulário de Avaliação -->
+<!-- Rating form -->
 <h5>Avaliar esta Lista:</h5>
 <form asp-action="SubmitListRating" method="post">
     <input type="hidden" name="listId" value="@Model.UserListId" />
@@ -49,6 +50,8 @@ else
                     <a href="@Url.Action("Details", "Anime", new { id = anime.AnimeId })">
                         <img src="@anime.ImageURL" class="card-img-top" alt="@anime.Title" />
                     </a>
+
+                    <!-- Dropdown to add an anime to a list -->
                     <div class="card-body">
                         <h5 class="card-title">
                             <a href="@Url.Action("Details", "Anime", new { id = anime.AnimeId })">
@@ -90,7 +93,7 @@ else
     </div>
 }
 
-<!-- Modal para Adicionar a Listas Existentes -->
+<!-- Modal to add an anime to an existing list -->
 <div class="modal fade" id="existingListsModal" tabindex="-1" aria-labelledby="existingListsModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
@@ -105,7 +108,6 @@ else
                     <div class="mb-3">
                         <label for="listSelect" class="form-label">Selecione uma Lista</label>
                         <select class="form-select" id="listSelect" name="listId">
-                            <!-- Options will be populated dynamically -->
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Adicionar</button>
@@ -115,6 +117,7 @@ else
     </div>
 </div>
 
+<!-- Script to show the modal and populate the select with the user's lists -->
 <script>
     function showExistingListsModal(animeId) {
         $('#animeIdInput').val(animeId);
@@ -137,6 +140,7 @@ else
     }
 </script>
 
+<!-- Script to remove an anime from a list -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const removeAnimeButtons = document.querySelectorAll('.remove-anime-btn');
@@ -185,7 +189,7 @@ else
 </script>
 
 
-<!-- Estilos CSS -->
+<!-- Colors for the stars -->
 <style>
     .star {
         font-size: 1.5rem;
@@ -197,16 +201,14 @@ else
     }
 </style>
 
-<!-- Script para atualizar as estrelas -->
+<!-- Script to update the stars -->
 <script>
-    // Função para atualizar visualmente as estrelas selecionadas
     document.querySelectorAll('.rating').forEach(rating => {
         const stars = rating.querySelectorAll('.star');
         stars.forEach(star => {
             star.addEventListener('click', function () {
-                const selectedValue = parseInt(this.getAttribute('data-value')); // Obtém o valor da estrela clicada
+                const selectedValue = parseInt(this.getAttribute('data-value'));
                 stars.forEach((s, index) => {
-                    // Preenche todas as estrelas até o valor selecionado
                     if (index < selectedValue) {
                         s.classList.add('filled');
                         s.textContent = '★';

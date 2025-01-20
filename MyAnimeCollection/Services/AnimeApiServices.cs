@@ -7,11 +7,13 @@ public class AnimeApiService
 {
     private readonly HttpClient _httpClient;
 
+    // Constructor
     public AnimeApiService(HttpClient httpClient)
     {
         _httpClient = httpClient;
     }
 
+    // Get all animes
     public async Task<List<Anime>> GetAnimesAsync()
     {
         var response = await _httpClient.GetAsync("http://localhost:5048/api/anime");
@@ -19,6 +21,7 @@ public class AnimeApiService
         return await response.Content.ReadFromJsonAsync<List<Anime>>();
     }
 
+    // Get an anime by its id
     public async Task<Anime> GetAnimeAsync(int id)
     {
         var response = await _httpClient.GetAsync($"http://localhost:5048/api/anime/{id}");
@@ -26,13 +29,14 @@ public class AnimeApiService
         return await response.Content.ReadFromJsonAsync<Anime>();
     }
 
+    // Get animes by their ids
     public async Task<List<Anime>> GetAnimesByIdsAsync(List<int> animeIds)
     {
         var animes = new List<Anime>();
 
         foreach (var id in animeIds)
         {
-            var anime = await GetAnimeAsync(id);  // Aqui é esperado um único ID
+            var anime = await GetAnimeAsync(id);
             if (anime != null)
             {
                 animes.Add(anime);
@@ -44,6 +48,7 @@ public class AnimeApiService
 
 }
 
+// Anime class and its properties
 public class Anime
 {
     public int AnimeId { get; set; }

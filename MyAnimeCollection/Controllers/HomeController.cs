@@ -3,20 +3,20 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using Models; // Certifique-se de ajustar o namespace conforme necessário
+using Models;
 public class HomeController : Controller
 {
     private readonly AnimeApiService _animeApiService;
-
     private readonly ApplicationDbContext _context;
 
+    // Constructor
     public HomeController(ApplicationDbContext context, AnimeApiService animeApiService)
     {
         _context = context;
         _animeApiService = animeApiService;
     }
 
-
+    // Shows all animes with an optional filter by date (Use Case #5)
     public async Task<IActionResult> Index(DateTime? startDate, DateTime? endDate)
     {
         var animes = await _animeApiService.GetAnimesAsync();
@@ -57,6 +57,7 @@ public class HomeController : Controller
         return View(animes);
     }
 
+    // Privacy policy page
     public IActionResult Privacy()
     {
         return View();

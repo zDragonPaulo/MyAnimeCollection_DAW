@@ -13,9 +13,11 @@
 </head>
 
 <body>
+    <!-- Website header -->
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
+                <!-- Website logo -->
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="~/assets/icon.png" width="30" height="30" alt="Logo" /> 𝓜𝔂 𝓐𝓷𝓲𝓶𝓮
                     𝓒𝓸𝓵𝓵𝓮𝓬𝓽𝓲𝓸𝓷
@@ -27,6 +29,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-6 mb-lg-0"></ul>
 
+                    <!-- Search bar with filter for animes or users -->
                     <form id="searchForm" class="d-flex mx-auto" method="get" asp-controller="Anime" asp-action="Search"
                         style="max-width: 600px;">
                         <select id="searchType" class="form-select me-4" name="searchType"
@@ -51,6 +54,7 @@
                         }
                     </script>
 
+                    <!-- User profile and login/logout buttons -->
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         @if (User?.Identity?.IsAuthenticated ?? false)
                         {
@@ -82,12 +86,15 @@
             </div>
         </nav>
     </header>
+
+    <!-- Website content -->
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
+    <!-- Website footer -->
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2025 - MyAnimeCollection - <a asp-area="" asp-controller="Home" asp-action="Privacy">Termos de
