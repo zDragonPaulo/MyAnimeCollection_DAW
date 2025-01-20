@@ -1,9 +1,4 @@
-using System.Net.Http;
-using System.Net.Http.Json;
 using AnimeAPI.Models;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 public class JinkanApiService
@@ -15,6 +10,7 @@ public class JinkanApiService
         _httpClient = httpClient;
     }
 
+    // Method to fetch animes from Jinkan API
     public async Task<List<Anime>> GetAnimesAsync()
     {
         var response = await _httpClient.GetAsync("https://api.jikan.moe/v4/anime");
@@ -25,7 +21,6 @@ public class JinkanApiService
         if (data == null || data.Data == null)
             throw new Exception("No data found.");
 
-        // Log para verificar se os dados estão sendo carregados corretamente
         foreach (var item in data.Data)
         {
             Console.WriteLine($"Anime: {item.TitleEnglish ?? item.Title}");
@@ -37,18 +32,19 @@ public class JinkanApiService
             Title = item.TitleEnglish ?? item.Title,
             Synopsis = item.Synopsis,
             NumberEpisodes = item.Episodes ?? 0,
-            ImageURL = item.Images?.Jpg?.ImageUrl ?? string.Empty, // Garantir que o valor é capturado
+            ImageURL = item.Images?.Jpg?.ImageUrl ?? string.Empty,
             Genres = item.Genres.Select(g => g.Name).ToList()
         }).ToList();
     }
 
 
-    // Modelos para mapear a resposta da JinkanAPI
+    // Model to map the response from Jinkan API
     public class JinkanApiResponse
     {
         public List<JinkanAnime> Data { get; set; }
     }
 
+    //Model to map animes
     public class JinkanAnime
     {
         public string Title { get; set; }
@@ -56,20 +52,25 @@ public class JinkanApiService
         public string Synopsis { get; set; }
         public int? Episodes { get; set; }
         public List<JinkanGenre> Genres { get; set; }
-        public JinkanImages Images { get; set; } // Adicione esta linha
+        public JinkanImages Images { get; set; }
 
     }
+
+    //Model to map images
     public class JinkanImages
     {
         public JinkanImageType Jpg { get; set; }
     }
+
+    // Model to map image types
     public class JinkanImageType
     {
         [JsonPropertyName("image_url")]
 
-        public string ImageUrl { get; set; }  // Armazena a URL da imagem como string
+        public string ImageUrl { get; set; }
     }
 
+    // Model to map genres
     public class JinkanGenre
     {
         public string Name { get; set; }
