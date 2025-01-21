@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.7)  21 JAN 2025 15:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.7)  21 JAN 2025 16:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -661,24 +661,24 @@ LaTeX Warning: Label `fig:InterfaceCA1e2' multiply defined.
 )
 \openout1 = `Relatorio.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
  (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count445
@@ -698,7 +698,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\Marti\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 32.
+Package hyperref Info: Link coloring OFF on input line 30.
  (Relatorio.out) (Relatorio.out)
 \@outlinefile=\write4
 \openout4 = `Relatorio.out'.
@@ -736,17 +736,17 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - online entry 'javascript' (Recursos/referencias.bib): Invalid format '2025-01-9' of date field 'urldate' - ignoring.
 
 )
-Package biblatex Info: Reference section=0 on input line 32.
-Package biblatex Info: Reference segment=0 on input line 32.
-<Recursos/Logos/LOGO_IPB.png, id=175, 646.415pt x 499.8675pt>
+Package biblatex Info: Reference section=0 on input line 30.
+Package biblatex Info: Reference segment=0 on input line 30.
+<Recursos/Logos/LOGO_IPB.png, id=161, 646.415pt x 499.8675pt>
 File: Recursos/Logos/LOGO_IPB.png Graphic file (type png)
 <use Recursos/Logos/LOGO_IPB.png>
-Package pdftex.def Info: Recursos/Logos/LOGO_IPB.png  used on input line 36.
+Package pdftex.def Info: Recursos/Logos/LOGO_IPB.png  used on input line 34.
 (pdftex.def)             Requested size: 172.5pt x 133.38716pt.
-<Recursos/Logos/IPBejaESTIG.jpg, id=176, 501.875pt x 301.125pt>
+<Recursos/Logos/IPBejaESTIG.jpg, id=162, 501.875pt x 301.125pt>
 File: Recursos/Logos/IPBejaESTIG.jpg Graphic file (type jpg)
 <use Recursos/Logos/IPBejaESTIG.jpg>
-Package pdftex.def Info: Recursos/Logos/IPBejaESTIG.jpg  used on input line 50.
+Package pdftex.def Info: Recursos/Logos/IPBejaESTIG.jpg  used on input line 47.
 (pdftex.def)             Requested size: 172.5pt x 103.50226pt.
 
 
@@ -758,7 +758,7 @@ Package pdftex.def Info: Recursos/Logos/IPBejaESTIG.jpg  used on input line 50.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.78 \end{titlepage}
+l.74 \end{titlepage}
                      [1] (Relatorio.toc
 
 
@@ -781,13 +781,13 @@ l.33 ...ntes de Programação}{21}{subsection.8.6}
 [3]
 
 [4]
-<Recursos/Imagens/DiagramaCasoUso.png, id=270, 235.1184pt x 214.8828pt>
+<Recursos/Imagens/DiagramaCasoUso.png, id=254, 235.1184pt x 214.8828pt>
 File: Recursos/Imagens/DiagramaCasoUso.png Graphic file (type png)
 <use Recursos/Imagens/DiagramaCasoUso.png>
-Package pdftex.def Info: Recursos/Imagens/DiagramaCasoUso.png  used on input line 128.
+Package pdftex.def Info: Recursos/Imagens/DiagramaCasoUso.png  used on input line 124.
 (pdftex.def)             Requested size: 345.0pt x 315.33945pt.
 
-Underfull \hbox (badness 1337) in paragraph at lines 145--145
+Underfull \hbox (badness 1337) in paragraph at lines 141--141
 []|\OT1/cmr/m/n/10 O anime ^^Se exi-bido com de-ta-lhes como si-nopse,
  []
 
@@ -797,14 +797,14 @@ Underfull \hbox (badness 1337) in paragraph at lines 145--145
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.150 
+l.146 
        <./Recursos/Imagens/DiagramaCasoUso.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 163--163
+Underfull \hbox (badness 10000) in paragraph at lines 159--159
 []|\OT1/cmr/bx/n/10 Cen^^Sario
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--163
+Underfull \hbox (badness 10000) in paragraph at lines 159--159
 []|\OT1/cmr/bx/n/10 Situa^^Xc~ao de
  []
 
@@ -814,24 +814,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--163
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.168 ...ltar o Perfil de outro \mbox{Utilizador}}
-                                                  ]
-Overfull \hbox (9.09865pt too wide) in paragraph at lines 168--168
+l.163 
+      ]
+Overfull \hbox (9.09865pt too wide) in paragraph at lines 165--165
 |[]\OT1/cmr/bx/n/12 Caso de Uso N\TS1/cmr/bx/n/12 �\OT1/cmr/bx/n/12 3 - Con-sul-tar o Per-fil de ou-tro []| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--179
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
 []|\OT1/cmr/bx/n/10 Cen^^Sario
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--179
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
 []|\OT1/cmr/bx/n/10 Situa^^Xc~ao de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--196
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
 []|\OT1/cmr/bx/n/10 Situa^^Xc~ao de
  []
 
@@ -841,19 +841,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 196--196
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.201 ... os \mbox{animes} com melhor avaliação}
-                                                  
+l.197 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.201 ... os \mbox{animes} com melhor avaliação}
-                                                  ]
-Underfull \hbox (badness 10000) in paragraph at lines 212--212
+l.197 
+      ]
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
 []|\OT1/cmr/bx/n/10 Cen^^Sario
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--212
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
 []|\OT1/cmr/bx/n/10 Situa^^Xc~ao de
  []
 
@@ -863,27 +863,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 212--212
 pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.217 \newpage
+l.214 \newpage
               
 pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.217 \newpage
+l.214 \newpage
               ]
-<Recursos/Imagens/DiagramaER.png, id=295, 620.3175pt x 402.00188pt>
+<Recursos/Imagens/DiagramaER.png, id=279, 620.3175pt x 402.00188pt>
 File: Recursos/Imagens/DiagramaER.png Graphic file (type png)
 <use Recursos/Imagens/DiagramaER.png>
-Package pdftex.def Info: Recursos/Imagens/DiagramaER.png  used on input line 229.
+Package pdftex.def Info: Recursos/Imagens/DiagramaER.png  used on input line 227.
 (pdftex.def)             Requested size: 345.0pt x 223.57986pt.
 
-Overfull \hbox (42.67912pt too wide) in paragraph at lines 229--229
+Overfull \hbox (42.67912pt too wide) in paragraph at lines 227--227
 [][] 
  []
 
 
 
 [9 <./Recursos/Imagens/DiagramaER.png>]
-<Recursos/Imagens/ModeloFisico.png, id=301, 526.21594pt x 474.27188pt>
+<Recursos/Imagens/ModeloFisico.png, id=285, 526.21594pt x 474.27188pt>
 File: Recursos/Imagens/ModeloFisico.png Graphic file (type png)
 <use Recursos/Imagens/ModeloFisico.png>
 Package pdftex.def Info: Recursos/Imagens/ModeloFisico.png  used on input line 242.
@@ -898,27 +898,27 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has
                                                   \__shipout_drop_firstpage_...
 l.246 \newpage
                <./Recursos/Imagens/ModeloFisico.png>]
-<Recursos/Imagens/Storyboard.png, id=312, 483.7272pt x 497.2176pt>
+<Recursos/Imagens/Storyboard.png, id=296, 483.7272pt x 497.2176pt>
 File: Recursos/Imagens/Storyboard.png Graphic file (type png)
 <use Recursos/Imagens/Storyboard.png>
-Package pdftex.def Info: Recursos/Imagens/Storyboard.png  used on input line 254.
+Package pdftex.def Info: Recursos/Imagens/Storyboard.png  used on input line 255.
 (pdftex.def)             Requested size: 259.64174pt x 266.88507pt.
 
 
 [12 <./Recursos/Imagens/Storyboard.png>]
-<Recursos/Imagens/InterfaceCA1e2.png, id=318, 790.152pt x 422.17725pt>
+<Recursos/Imagens/InterfaceCA1e2.png, id=302, 790.152pt x 422.17725pt>
 File: Recursos/Imagens/InterfaceCA1e2.png Graphic file (type png)
 <use Recursos/Imagens/InterfaceCA1e2.png>
-Package pdftex.def Info: Recursos/Imagens/InterfaceCA1e2.png  used on input line 263.
+Package pdftex.def Info: Recursos/Imagens/InterfaceCA1e2.png  used on input line 264.
 (pdftex.def)             Requested size: 276.00105pt x 147.46791pt.
 File: Recursos/Imagens/InterfaceCA1e2.png Graphic file (type png)
 <use Recursos/Imagens/InterfaceCA1e2.png>
-Package pdftex.def Info: Recursos/Imagens/InterfaceCA1e2.png  used on input line 271.
+Package pdftex.def Info: Recursos/Imagens/InterfaceCA1e2.png  used on input line 273.
 (pdftex.def)             Requested size: 276.00105pt x 147.46791pt.
-<Recursos/Imagens/InterfaceCA3.png, id=319, 757.6305pt x 422.7795pt>
+<Recursos/Imagens/InterfaceCA3.png, id=303, 757.6305pt x 422.7795pt>
 File: Recursos/Imagens/InterfaceCA3.png Graphic file (type png)
 <use Recursos/Imagens/InterfaceCA3.png>
-Package pdftex.def Info: Recursos/Imagens/InterfaceCA3.png  used on input line 280.
+Package pdftex.def Info: Recursos/Imagens/InterfaceCA3.png  used on input line 283.
 (pdftex.def)             Requested size: 276.00105pt x 154.01324pt.
 
 
@@ -926,22 +926,22 @@ Package pdftex.def Info: Recursos/Imagens/InterfaceCA3.png  used on input line 2
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.283 \end{figure}
+l.286 \end{figure}
                   
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.283 \end{figure}
+l.286 \end{figure}
                    <./Recursos/Imagens/InterfaceCA1e2.png>]
-<Recursos/Imagens/InterfaceCA4.png, id=325, 1026.83624pt x 424.58624pt>
+<Recursos/Imagens/InterfaceCA4.png, id=309, 1026.83624pt x 424.58624pt>
 File: Recursos/Imagens/InterfaceCA4.png Graphic file (type png)
 <use Recursos/Imagens/InterfaceCA4.png>
-Package pdftex.def Info: Recursos/Imagens/InterfaceCA4.png  used on input line 290.
+Package pdftex.def Info: Recursos/Imagens/InterfaceCA4.png  used on input line 293.
 (pdftex.def)             Requested size: 276.00105pt x 114.12152pt.
-<Recursos/Imagens/InterfaceCA5.png, id=326, 160.4394pt x 197.0562pt>
+<Recursos/Imagens/InterfaceCA5.png, id=310, 160.4394pt x 197.0562pt>
 File: Recursos/Imagens/InterfaceCA5.png Graphic file (type png)
 <use Recursos/Imagens/InterfaceCA5.png>
-Package pdftex.def Info: Recursos/Imagens/InterfaceCA5.png  used on input line 300.
+Package pdftex.def Info: Recursos/Imagens/InterfaceCA5.png  used on input line 304.
 (pdftex.def)             Requested size: 276.00105pt x 338.99318pt.
 
 
@@ -949,29 +949,29 @@ Package pdftex.def Info: Recursos/Imagens/InterfaceCA5.png  used on input line 3
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.303 \end{figure}
+l.307 \end{figure}
                   
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.303 \end{figure}
+l.307 \end{figure}
                    <./Recursos/Imagens/InterfaceCA3.png> <./Recursos/Imagens/InterfaceCA4.png>]
 
 [15
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.304 \newpage
+l.308 \newpage
                <./Recursos/Imagens/InterfaceCA5.png>]
-<Recursos/Imagens/MediaFidelidade1.png, id=338, 844.3545pt x 437.2335pt>
+<Recursos/Imagens/MediaFidelidade1.png, id=322, 844.3545pt x 437.2335pt>
 File: Recursos/Imagens/MediaFidelidade1.png Graphic file (type png)
 <use Recursos/Imagens/MediaFidelidade1.png>
-Package pdftex.def Info: Recursos/Imagens/MediaFidelidade1.png  used on input line 312.
+Package pdftex.def Info: Recursos/Imagens/MediaFidelidade1.png  used on input line 317.
 (pdftex.def)             Requested size: 345.0pt x 178.65309pt.
-<Recursos/Imagens/MediaFidelidade2.png, id=339, 812.43526pt x 444.4605pt>
+<Recursos/Imagens/MediaFidelidade2.png, id=323, 812.43526pt x 444.4605pt>
 File: Recursos/Imagens/MediaFidelidade2.png Graphic file (type png)
 <use Recursos/Imagens/MediaFidelidade2.png>
-Package pdftex.def Info: Recursos/Imagens/MediaFidelidade2.png  used on input line 313.
+Package pdftex.def Info: Recursos/Imagens/MediaFidelidade2.png  used on input line 318.
 (pdftex.def)             Requested size: 345.0pt x 188.74062pt.
 
 
@@ -979,24 +979,39 @@ Package pdftex.def Info: Recursos/Imagens/MediaFidelidade2.png  used on input li
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.317 \newpage
+l.322 \newpage
                <./Recursos/Imagens/MediaFidelidade1.png> <./Recursos/Imagens/MediaFidelidade2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 326--335
 
-[17]
-<Recursos/Imagens/DeploymentDiagram.png, id=351, 579.66562pt x 402.00188pt>
+ []
+
+<Recursos/Imagens/InterfaceCA5Melhoria.png, id=330, 732.48656pt x 157.33781pt>
+File: Recursos/Imagens/InterfaceCA5Melhoria.png Graphic file (type png)
+<use Recursos/Imagens/InterfaceCA5Melhoria.png>
+Package pdftex.def Info: Recursos/Imagens/InterfaceCA5Melhoria.png  used on input line 337.
+(pdftex.def)             Requested size: 345.0pt x 74.10722pt.
+
+
+[17
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.343 \newpage
+               <./Recursos/Imagens/InterfaceCA5Melhoria.png>]
+<Recursos/Imagens/DeploymentDiagram.png, id=337, 579.66562pt x 402.00188pt>
 File: Recursos/Imagens/DeploymentDiagram.png Graphic file (type png)
 <use Recursos/Imagens/DeploymentDiagram.png>
-Package pdftex.def Info: Recursos/Imagens/DeploymentDiagram.png  used on input line 345.
+Package pdftex.def Info: Recursos/Imagens/DeploymentDiagram.png  used on input line 354.
 (pdftex.def)             Requested size: 345.0pt x 239.25848pt.
 
 
 [18
-pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.354 \newpage
+l.364 \newpage
                <./Recursos/Imagens/DeploymentDiagram.png>]
-Overfull \hbox (1.99951pt too wide) in paragraph at lines 367--374
+Overfull \hbox (1.99951pt too wide) in paragraph at lines 376--382
 \OT1/cmr/m/n/10 para im-ple-men-tar a API e a base de da-dos, o grupo de-ci-diu mu-dar para ASP.NET
  []
 
@@ -1009,134 +1024,47 @@ Overfull \hbox (1.99951pt too wide) in paragraph at lines 367--374
 [21]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 457.
+(hyperref)                be the same. Added a new anchor on input line 466.
 
 
 
 [22]
-Overfull \hbox (91.49574pt too wide) in paragraph at lines 478--478
+Overfull \hbox (91.49574pt too wide) in paragraph at lines 486--486
 []                \OT1/cmtt/m/n/10 <button class="btn btn-danger btn-sm remove-anime-btn"[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 468--488
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 490--494
+Underfull \hbox (badness 10000) in paragraph at lines 476--495
 
  []
 
 
 
 [23]
-Overfull \hbox (17.99638pt too wide) in paragraph at lines 498--498
+Overfull \hbox (17.99638pt too wide) in paragraph at lines 505--505
 []        \OT1/cmtt/m/n/10 var ratings = await _context.UserListAvaliations[] 
  []
 
 
-Overfull \hbox (59.99602pt too wide) in paragraph at lines 502--502
+Overfull \hbox (59.99602pt too wide) in paragraph at lines 509--509
 []        \OT1/cmtt/m/n/10 var averageRating = ratings.Any() ? ratings.Average(r =>[] 
- []
-
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 512.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 513--517
-
- []
-
-
-Overfull \hbox (17.99638pt too wide) in paragraph at lines 520--520
-[]        \OT1/cmtt/m/n/10 public async Task<IActionResult> Details(int id)[] 
- []
-
-
-Overfull \hbox (65.24597pt too wide) in paragraph at lines 522--522
-[]            \OT1/cmtt/m/n/10 var anime = await _animeApiService.GetAnimeAsync(id);[] 
- []
-
-
-Overfull \hbox (101.99565pt too wide) in paragraph at lines 529--529
-[]            \OT1/cmtt/m/n/10 var reviews = await _context.UserAnimeAvaliations.Where(r =>[] 
- []
-
-
-Overfull \hbox (80.99583pt too wide) in paragraph at lines 531--531
-[]            \OT1/cmtt/m/n/10 var averageRating = reviews.Any() ? reviews.Average(r =>[] 
  []
 
 
 
 [24]
-Overfull \hbox (70.49593pt too wide) in paragraph at lines 577--577
-[]        \OT1/cmtt/m/n/10 public List<int> AnimeIds { get; set; } = new List<int>();[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 545--583
-
- []
-
-
-
-[25]
-
-[26]
-Overfull \hbox (92.24529pt too wide) in paragraph at lines 590--590
-[]    \OT1/cmtt/m/n/10 public async Task<IActionResult> RemoveAnimeFromList([] 
- []
-
-
-Overfull \hbox (34.49579pt too wide) in paragraph at lines 591--591
-[]        \OT1/cmtt/m/n/10 [FromBody] RemoveAnimeRequest request)[] 
- []
-
-
-Overfull \hbox (155.24474pt too wide) in paragraph at lines 593--593
-[]        \OT1/cmtt/m/n/10 Console.WriteLine($"ID da lista recebido: {request.ListId}");[] 
- []
-
-
-Overfull \hbox (160.49469pt too wide) in paragraph at lines 594--594
-[]        \OT1/cmtt/m/n/10 Console.WriteLine($"ID do anime recebido: {request.AnimeId}");[] 
- []
-
-
-Overfull \hbox (181.4945pt too wide) in paragraph at lines 596--596
-[]        \OT1/cmtt/m/n/10 var userList = await _context.UserLists.FindAsync(request.ListId);[] 
- []
-
-
-Overfull \hbox (2.99606pt too wide) in paragraph at lines 603--603
-[]        \OT1/cmtt/m/n/10 public int AnimeId { get; set; }[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 584--609
-
- []
-
-
-
-[27]
-
-[28]
-Overfull \hbox (2.99362pt too wide) in paragraph at lines 630--630
+Overfull \hbox (2.99362pt too wide) in paragraph at lines 534--534
 [][]\OT1/cmr/m/n/10 Bootstrap. (2023). \OT1/cmr/m/it/10 Bo-ots-trap\OT1/cmr/m/n/10 . Ob-tido se-tem-bro 13, 2023, de []$https : / / getbootstrap .
  []
 
 
-Overfull \hbox (9.90387pt too wide) in paragraph at lines 630--630
+Overfull \hbox (9.90387pt too wide) in paragraph at lines 534--534
 [][]\OT1/cmr/m/n/10 Bruno, L. (2025). \OT1/cmr/m/it/10 P^^Sagina da Uni-dade Cur-ri-cu-lar de De-sen-vol-vi-mento de Aplica^^Xc~oes
  []
 
 
 
-[29
+[25
 
 ] (Relatorio.aux)
  ***********
@@ -1148,23 +1076,23 @@ L3 programming layer <2024-10-09>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Relatorio.out' has not changed.
-(rerunfilecheck)             Checksum: 35731C0AADE4650BD393CFCB2065C51E;9472.
+(rerunfilecheck)             Checksum: D901000FD2FF43B1A7EF34082BA30F7A;8718.
 Package logreq Info: Writing requests to 'Relatorio.run.xml'.
 \openout1 = `Relatorio.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21413 strings out of 473897
- 380743 string characters out of 5726462
- 1306662 words of memory out of 5000000
- 43949 multiletter control sequences out of 15000+600000
+ 21411 strings out of 473897
+ 380969 string characters out of 5726462
+ 1306582 words of memory out of 5000000
+ 43952 multiletter control sequences out of 15000+600000
  561231 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,81p,1264b,2901s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx1200.pk> <C:\Users\Marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Relatorio.pdf (31 pages, 2136595 bytes).
+Output written on Relatorio.pdf (27 pages, 2131236 bytes).
 PDF statistics:
- 488 PDF objects out of 1000 (max. 8388607)
- 92 named destinations out of 1000 (max. 500000)
- 418 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 456 PDF objects out of 1000 (max. 8388607)
+ 87 named destinations out of 1000 (max. 500000)
+ 391 words of extra memory for PDF output out of 10000 (max. 10000000)
 

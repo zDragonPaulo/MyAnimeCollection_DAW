@@ -34,12 +34,8 @@
 \contentsline {section}{\numberline {9}Desenvolvimento da App Frontend/MVC}{21}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Decisões de Implementação}{21}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Principais Casos Relevantes de Programação}{22}{subsection.9.2}%
-\contentsline {subsubsection}{Martinho José Novo Caeiro}{23}{section*.1}%
 \contentsline {subsubsection}{Avaliar um Anime Especifíco}{23}{section*.1}%
 \contentsline {subsubsection}{Visualizar o perfil de Outro Utilizador}{23}{section*.1}%
 \contentsline {subsubsection}{Avaliar uma Lista de Animes de Outro Utilizador}{24}{section*.1}%
-\contentsline {subsection}{\numberline {9.3}Paulo António Tavares Abade}{24}{subsection.9.3}%
-\contentsline {subsubsection}{Consultar Animes}{24}{section*.2}%
-\contentsline {subsubsection}{Adicionar Animes a uma Lista}{25}{section*.2}%
-\contentsline {section}{\numberline {10}Conclusão e Trabalho Futuro}{28}{section.10}%
-\contentsline {section}{Bibliografia}{29}{section*.3}%
+\contentsline {section}{\numberline {10}Conclusão e Trabalho Futuro}{24}{section.10}%
+\contentsline {section}{Bibliografia}{25}{section*.2}%

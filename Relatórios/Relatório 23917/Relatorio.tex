@@ -24,8 +24,6 @@
 \setlength{\bibitemsep}{0.5cm}  % Ajuste o espaçamento entre os itens da bibliografia
 \def\bibspacing{\baselineskip=10pt} % Ajusta o espaçamento entre os itens
 
-
-
 \setcounter{secnumdepth}{2}
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
@@ -44,8 +42,7 @@
 
 	\textbf{My Anime Collection}
 
-	\textbf{Martinho José Novo Caeiro}\\
-	\textbf{Paulo António Tavares Abade}
+	\textbf{Martinho José Novo Caeiro}
 
 	\includegraphics[width=0.5\textwidth]{Recursos/Logos/IPBejaESTIG.jpg}\par
 	\vfill
@@ -65,8 +62,7 @@
 
 	\textbf{My Anime Collection}
 
-	\textbf{Martinho José Novo Caeiro}\\
-	\textbf{Paulo António Tavares Abade}
+	\textbf{Martinho José Novo Caeiro}
 
 	\textbf{DOCENTE}\\
 	\textbf{Professor Luís Carlos Bruno}
@@ -86,7 +82,6 @@
 \newpage
 \tableofcontents
 \listoffigures
-\listoftables
 \newpage
 
 \section{Introdução}
@@ -118,6 +113,7 @@ A Catarina tem 19 anos e descobriu o MyAnimeCollection pelo Miguel, e então qui
 listas. Ao aceder o perfil do Miguel, viu as listas que ele tinha disponíveis no seu perfil. Após ver a lista de “A Visualizar” do Miguel,
 avaliou-a com 5 estrelas.
 \newpage
+
 %-----------------------------------------------------------------------------------------------------------------------------%
 \section{Diagrama de Casos de Uso}
 Para criar o diagrama de casos de uso, foi utilizado a plataforma draw.io, 
@@ -164,6 +160,7 @@ Para criar o diagrama de casos de uso, foi utilizado a plataforma draw.io,
     \caption{Caso de Uso Nº2}
     \label{tab:CasodeUso2}
 \end{table}
+
 %-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Caso de Uso Nº3 - Consultar o Perfil de outro \mbox{Utilizador}}
 \begin{table}[H]
@@ -180,8 +177,8 @@ Para criar o diagrama de casos de uso, foi utilizado a plataforma draw.io,
     \caption{Caso de Uso Nº3}
     \label{tab:CasodeUso3}
 \end{table}
-%-----------------------------------------------------------------------------------------------------------------------------%
 
+%-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Caso de Uso Nº4 - Avaliar uma Lista de Animes de outro Utilizador}
 \begin{table}[H]
     \centering
@@ -197,6 +194,7 @@ Para criar o diagrama de casos de uso, foi utilizado a plataforma draw.io,
     \caption{Caso de Uso Nº4}
     \label{tab:CasodeUso4}
 \end{table}
+
 %-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Caso de Uso Nº5 (Partilhado) - Visualizar os \mbox{animes} com melhor avaliação}
 \begin{table}[H]
@@ -213,8 +211,8 @@ Para criar o diagrama de casos de uso, foi utilizado a plataforma draw.io,
     \caption{Caso de Uso Nº5}
     \label{tab:CasodeUso5}
 \end{table}
-
 \newpage
+
 %-----------------------------------------------------------------------------------------------------------------------------%
 \section{Desenho do Sistema}
 
@@ -227,6 +225,7 @@ a particularidade da convivência da API com a base de dados, visto que ambas ne
 Este é o diagrama de entidade-relação utilizado pelo sistema do MyAnimeCollection:
 
 \includegraphics[width=1\textwidth]{Recursos/Imagens/DiagramaER.png}\par
+
 %-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Modelo Relacional}
 \begin{itemize}
@@ -236,6 +235,7 @@ Este é o diagrama de entidade-relação utilizado pelo sistema do MyAnimeCollec
 	\item UserAnimeAvaliation (useranimelistavaliation\_id, user\_id, anime\_id, avaliation, datacreated)
 	\item Anime(anime\_id, synopsis, genres, n\_episodes, n\_seasons)
 \end{itemize}
+
 %-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Modelo Físico}
 \begin{figure}[H]
@@ -244,6 +244,7 @@ Este é o diagrama de entidade-relação utilizado pelo sistema do MyAnimeCollec
     \caption{Modelo Físico}
 \end{figure}
 \newpage
+
 %-----------------------------------------------------------------------------------------------------------------------------%
 \section{Modelação de Interfaces Gráficas com o Utilizador}
 
@@ -253,8 +254,8 @@ porém serão apenas exploradas posteriormente.
 
 \includegraphics[width=\dimexpr\textwidth-3cm\relax]{Recursos/Imagens/Storyboard.png}
 \newpage
-%-----------------------------------------------------------------------------------------------------------------------------%
 
+%-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Interfaces do Caso de Uso 1}
 Este é o caso de uso de consultar animes, onde o utilizador pode pesquisar informações 
 sobre um anime específico, como sinopse, episódios, etc.
@@ -264,6 +265,7 @@ sobre um anime específico, como sinopse, episódios, etc.
     \label{fig:InterfaceCA1e2}
     \caption{Interface do Caso de Uso 1}
 \end{figure}
+
 %-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Interfaces do Caso de Uso 2}
 Este é o caso de uso de adicionar animes a uma lista, onde apenas o dono da lista pode adicionar animes à mesma.
@@ -272,6 +274,7 @@ Este é o caso de uso de adicionar animes a uma lista, onde apenas o dono da lis
     \label{fig:InterfaceCA1e2}
     \caption{Interface do Caso de Uso 2}
 \end{figure}
+
 %-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Interfaces do Caso de Uso 3}
 Este é o caso de uso de consultar o perfil de outro utilizador, onde o utilizador pode visualizar o 
@@ -281,8 +284,8 @@ perfil e listas de outros utilizadores.
     \label{fig:InterfaceCA3}
     \caption{Interface do Caso de Uso 3}
 \end{figure}
-%-----------------------------------------------------------------------------------------------------------------------------%
 
+%-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Interfaces do Caso de Uso 4}
 Este é o caso de uso de avaliar uma lista de animes de outro utilizador, onde o utilizador pode 
 avaliar as listas de animes de outros utilizadores.
@@ -291,6 +294,7 @@ avaliar as listas de animes de outros utilizadores.
     \label{fig:InterfaceCA4}
     \caption{Interface do Caso de Uso 4}
 \end{figure}
+
 %-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Interfaces do Caso de Uso 5}
 Este é o caso de uso de visualizar os animes com melhor avaliação, onde o utilizador pode visualizar
@@ -302,6 +306,7 @@ vai sofrer uma melhoria na fase de implementação.
     \caption{Interface do Caso de Uso 5}
 \end{figure}
 \newpage
+
 %-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Protótipo de Média Fidelidade}
 Estes é o protótipo de média fidelidade do sistema, onde é possível visualizar as páginas principais
@@ -315,8 +320,8 @@ para criar protótipos de forma colaborativa.
     \caption{Protótipo de Média Fidelidade}
 \end{figure}
 \newpage
+
 %-----------------------------------------------------------------------------------------------------------------------------%
-% Melhorias efetuadas
 \section{Melhorias efetuadas na Análise e Desenho do Sistema}
 O Caso de Uso 5 foi aprofundado, agora sendo possivel visualizar animes por uma data 
 especifica em vez de um periodo predefinido. Esta melhoria foi feita para que o utilizador
@@ -326,12 +331,16 @@ assim ser utilizado como uma aplicação de Sistemas de Informação, já que po
 uma funcionalidade CUBO que permite ao utilizador visualizar os dados de uma forma
 mais eficiente, na questão de tempo. É limitado a animes, porém pode ser expandido
 para outras especificações, como por exemplo, o género do anime, ou o estúdio que o
-produziu com melhor avaliação num determinado periodo de tempo.
+produziu com melhor avaliação num determinado periodo de tempo.\\
 
-(Inserir imagem da funcionalidade do ecrã de visualização de animes com melhor avaliação
-entre datas)
-\newpage
+\begin{figure}[H]
+    \includegraphics[width=1\textwidth]{Recursos/Imagens/InterfaceCA5Melhoria.png}\par
+    \label{fig:InterfaceCA5Melhoria}
+    \caption{Interface do Caso de Uso 5 com Melhoria}
+\end{figure}
+
 %-----------------------------------------------------------------------------------------------------------------------------%
+\newpage
 \section{Implementação}
 
 \subsection{Arquitetura do Sistema}
@@ -351,8 +360,8 @@ A aplicação representa o Frontend/Computador do utilizador do sistema, que se 
 que é a aplicação que o utilizador interage. A aplicação comunica com a API, que possui a sua base de dados
 em LocalD e a Base de Dados do Sistema, possuiu outra base de dados em LocalDB.
 
-\newpage
 %-----------------------------------------------------------------------------------------------------------------------------%
+\newpage
 \subsection{Tecnologias Usadas}
 As tecnologias utilizadas para a implementação do sistema foram:
 \begin{itemize}
@@ -370,6 +379,7 @@ e a base de dados, o grupo decidiu mudar para ASP.NET Core 9.0, devido à facili
 implementação da API e da base de dados, que foi feita em SQL Server, porém com uma 
 metodologia de Code First. O Frontend foi desenvolvido em Razor, utilizando HTML, CSS,
 Bootstrap e HTML Helpers. O Backend foi desenvolvido em C\#.
+
 %-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Desenvolvimento da API}
 A API foi desenvolvida em ASP.NET Core 9.0, utilizando Entity Framework Core para a
@@ -392,6 +402,7 @@ de ser simples e intuitiva, para que o utilizador possa facilmente perceber como
 Ao utilizar o Swagger, o programador está a fazer alterações diretas na base de dados,
 da API. Como a base de dados é em LocalDB, as alterações são feitas diretamente na base de dados
 local, e não na base de dados da API, que pode um dia ser implementada num servidor.
+
 %-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Decisões de Implementação}
 Para criar a base de dados utilizada pela API, utilizamos a metodologia Code First, que permite
@@ -405,7 +416,6 @@ a rota \textit{/api/animes} permite ao utilizador ver todos os animes, enquanto 
 permite ao utilizador ver um anime específico. Os controladores foram criados com base nas operações CRUD,
 e não foi necessário criar mais controladores, visto que o sistema é simples.
 
-
 %-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Principais Casos Relevantes de Programação}
 Sobre a implementação da API, apenas destacamos a implementação da API da Jinkan, que fornece os dados
@@ -413,9 +423,9 @@ dos animes, como sinopse, número de episódios, número de temporadas, entre ou
 implementada com recurso a um serviço, sendo que apenas insere dados na primeira vez que é chamada e a apenas
 se a tabela de animes estiver vazia. Isto foi feito para termos dados de teste de forma mais rápida e sem ter preocupações,
 ao modificar a API e a Base de Dados. As outras operações, permanecem funcionais.
+
 %-----------------------------------------------------------------------------------------------------------------------------%
 \section{Desenvolvimento da App Frontend/MVC}
-%-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Decisões de Implementação}
 Para criar a base de dados utilizada pelo sistema, foi utilizada novamente a metodologia Code First. 
 A base de dados foi criada depois com recurso ao Entity Framework Core, mais especificamente a parte das Migrations. \\
@@ -447,14 +457,12 @@ adicionar animes à lista ou remover animes da lista.
 \subsection{Principais Casos Relevantes de Programação}
 Antes de referir os principais casos de programação é necessário referir um acontecimento que, 
 apesar de não ser um caso de programação, é essencial para o funcionamento do sistema. Este acontecimento
-é ao ligar a API, é necessário ligar a mesma duas vezes. A primeira vez é dá um erro, porém a segunda vez 
+é ao ligar a API, é necessário ligar a mesma duas vezes. A primeira vez dá um erro, porém a segunda vez 
 é bem sucedida. Os membros do grupo, acreditam que isto deve-se à base de dados, já foi possível arranjar uma solução
 para o caminho relativo dos ficheiros .mdf e .log da base de dados ligada à API.\\
 Iniciando agora os principais casos de implementação, focando na parte de cada membro do grupo.
-%-----------------------------------------------------------------------------------------------------------------------------%
-%-----------------------------------------------------------------------------------------------------------------------------%
 
-\subsubsection{Martinho José Novo Caeiro}
+%-----------------------------------------------------------------------------------------------------------------------------%
 \subsubsection{Avaliar um Anime Especifíco}
 Este não é um caso de uso do sistema, porém é uma funcionalidade que foi implementada no sistema,
 para que seja possível fazer o caso de uso 5, partilhado entre os dois membros do grupo.
@@ -484,14 +492,13 @@ como é possível ver a seguir:\\\\
     \end{verbatim}
     \label{code:VisualizarPerfil}
 \end{minipage}
-%-----------------------------------------------------------------------------------------------------------------------------%
 
+%-----------------------------------------------------------------------------------------------------------------------------%
 \subsubsection{Avaliar uma Lista de Animes de Outro Utilizador}
 Para avaliar uma lista de animes de outro utilizador, foi necessário criar um método que permitisse essa funcionalidade ao utilizador.
 Este método foi criado no controlador \textit{UserListController}, que permite ao utilizador avaliar a lista de outro utilizador,
 com base em estrelas, que vão de 1 a 5. Essa informação é guardada na base de dados, e é possível visualizar a média da avaliação da lista
-na página do perfil do utilizador e nos detalhes da lista.\\
-
+na página do perfil do utilizador e nos detalhes da lista.
 
 \begin{minipage}[H]{0.8\textwidth}
     \begin{verbatim}
@@ -506,108 +513,6 @@ na página do perfil do utilizador e nos detalhes da lista.\\
 \end{minipage}
 
 %-----------------------------------------------------------------------------------------------------------------------------%
-%-----------------------------------------------------------------------------------------------------------------------------%
-
-\subsection{Paulo António Tavares Abade}
-\subsubsection{Consultar Animes}
-Para consultar animes, foi necessário criar um método que permitisse essa funcionalidade ao utilizador. Este método foi criado no controlador
-\textit{AnimeController}, com o excerto de código visto a seguir, que permite ao utilizador pesquisar um anime pelo nome, e o sistema retorna 
-as informações detalhadas do anime. Existe ainda a funcionalidade que permite ao utilizador ver todos os animes disponíveis na base de dados,
-sendo que esta fica na página principal do sistema, e é realizada pelo controlador \textit{HomeController}.\\
-
-\begin{minipage}[H]{0.8\textwidth}
-    \begin{verbatim}
-        public async Task<IActionResult> Details(int id)
-        {
-            var anime = await _animeApiService.GetAnimeAsync(id);
-            if (anime == null)
-            {
-                return NotFound();
-            }
-
-            // Calcular a média das avaliações
-            var reviews = await _context.UserAnimeAvaliations.Where(r => 
-            r.AnimeId == id).ToListAsync();
-            var averageRating = reviews.Any() ? reviews.Average(r => 
-            r.Avaliation / 2.0) : 0;
-            ViewBag.AverageRating = averageRating;
-
-            return View(anime);
-        }
-    \end{verbatim}
-    \label{code:ConsultarAnimes}
-\end{minipage}
-
-%-----------------------------------------------------------------------------------------------------------------------------%
-
-
-\subsubsection{Adicionar Animes a uma Lista}
-Para adicionar animes a uma lista, foi necessário criar um método que permitisse essa funcionalidade ao utilizador. Este método foi criado no controlador
-\textit{UserListController} que permite ao utilizador adicionar um anime às suas listas pessoais de animes para organizar seu progresso de visualização, 
-ou apenas para separar os animes de acordo com o seu gosto, como por exemplo, separar os animes por aqueles mais nostáligicos, ou por aqueles que
-que são mais emotivos para aquele utilizador.\\
-Esta foi a funcionalidade mais desafiadora, visto que surgiram vários problemas, como por exemplo, erros relacionados à inserção dos dados na base de 
-dados, e erros relacionados à comunicação entre o Frontend e o Backend, que foram resolvidos com recurso a pesquisas na internet e a ajuda de colegas
-de curso.\\
-Os erros associados à inserção de dados na base de dados, necessitou de eliminar a tabela intermediria que guardava os animes das listas dos utilizadores,
-e armazenar os ids dos animes diretamente na tabela de listas dos utilizadores, como um array, como tinha sido feito anteriormente no Projeto de TWAM,
-porém desta vez, cada lista, tinha o seu proprio array de animes, o que permitiu ao utilizador adicionar animes a uma lista especifica, sem que todas 
-as listas tivessem que passar por um processo de atualização. Porém, não foi possível implementar a funcionalidade que permitiria trabalhar de forma mais 
-eficiente com os dados, sendo essa a tabela intermediária. Esta funcionalidade será implementada numa futura melhoria do sistema. É possível ver isto na 
-no modelo de lista a seguir\\
-\begin{minipage}[H]{0.8\textwidth}
-    \begin{verbatim}
-    public class UserListModel {
-        [Key]
-        public int UserListId { get; set; }
-    
-        [ForeignKey("UserId")]
-        public int UserId { get; set; }
-    
-        public UserModel? User { get; set; }
-    
-        [Required]
-        [MaxLength(100)]
-        public string Name { get; set; }
-    
-        [MaxLength(500)]
-        public string Description { get; set; }
-    
-        // Lista de IDs de Animes
-        public List<int> AnimeIds { get; set; } = new List<int>();
-    }
-    \end{verbatim}
-    \label{code:AdicionarAnimes}
-    \end{minipage}
-\\
-\newpage
-Os erros associados à comunição incorreta entre o Frontend e o Backend, que necessitaram de utilizar alguns métodos novos 
-para nós, para solucionar os problemas, como a criação de uma classe interna no controlador que permitisse obter corretamente, 
-o id do utilizador e o id do anime, para que o utilizador conseguisse remover com sucesso o anime da lista.\\\\
-\begin{minipage}[H]{0.6\textwidth}
-    \begin{verbatim}
-    [HttpPost]
-    public async Task<IActionResult> RemoveAnimeFromList(
-        [FromBody] RemoveAnimeRequest request)
-    {
-        Console.WriteLine($"ID da lista recebido: {request.ListId}");
-        Console.WriteLine($"ID do anime recebido: {request.AnimeId}");
-
-        var userList = await _context.UserLists.FindAsync(request.ListId);
-
-        (...)
-    }
-
-    public class RemoveAnimeRequest
-    {
-        public int AnimeId { get; set; }
-        public int ListId { get; set; }
-    }
-    \end{verbatim}
-    \label{code:RemoverAnimes}
-\end{minipage}
-\newpage
-%-----------------------------------------------------------------------------------------------------------------------------%
 \section{Conclusão e Trabalho Futuro}
 Nesta etapa do projeto, obtivemos resultados que consideramos bastante satisfatórios e acreditamos que 
 este projeto apresenta um grande potencial para o futuro. A utilização do ASP.NET, em vez do Laravel como 
@@ -620,7 +525,6 @@ devido à nossa extrema necessidade para garantir ao utilizador algumas funciona
 páginas mais intuitiva, como por exemplo, mostrar se o anime já estava adicionado a alguma lista.
 
 %-----------------------------------------------------------------------------------------------------------------------------%
-
 \clearpage % Garante que a bibliografia começa numa nova página
 \phantomsection % Permite hiperlinks corretos no índice
 \renewcommand{\refname}{Bibliografia} % Para artigos

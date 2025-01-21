@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber Relatorio"] 1737474026.44857 "Relatorio.bcf" "Relatorio.bbl" "Relatorio" 1737474067.708 0
+["biber Relatorio"] 1737474026.44857 "Relatorio.bcf" "Relatorio.bbl" "Relatorio" 1737476811.36898 0
   "Recursos/referencias.bib" 1737383891 1717 b4c0e11ced474e4f9c926918609cc42d ""
-  "Relatorio.bcf" 1737474067 134234 a45517d65042d863b7a0c9a21f973d2a "pdflatex"
+  "Relatorio.bcf" 1737476810 134234 a45517d65042d863b7a0c9a21f973d2a "pdflatex"
   (generated)
   "Relatorio.bbl"
   "Relatorio.blg"
   (rewritten before read)
-["pdflatex"] 1737474059.79032 "c:/Users/Marti/Documents/MyAnimeCollection_DAW/Relatórios/Relatório 23917/Relatorio.tex" "Relatorio.pdf" "Relatorio" 1737474067.70979 0
+["pdflatex"] 1737476803.13601 "c:/Users/Marti/Documents/MyAnimeCollection_DAW/Relatórios/Relatório 23917/Relatorio.tex" "Relatorio.pdf" "Relatorio" 1737476811.37102 0
   "C:/Users/Marti/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1737474018 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Marti/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1200.pk" 1737133182 15080 a85ed1ccf14201f08ba068373d904b30 ""
   "C:/Users/Marti/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1731243681 11548 b5caf6eb2a1619f9510037dcf6ee99e1 ""
@@ -124,6 +124,7 @@
   "Recursos/Imagens/InterfaceCA3.png" 1737134331 318240 2261a98617c9cdfcc4e63882bb9b8c2d ""
   "Recursos/Imagens/InterfaceCA4.png" 1737134368 422067 46630e2cff9eea16c180197b68c5503e ""
   "Recursos/Imagens/InterfaceCA5.png" 1737134420 50314 668434906c7dda56b87d7a94bf9253ea ""
+  "Recursos/Imagens/InterfaceCA5Melhoria.png" 1737476655 10167 c0fa9c210f0947bf7061726f062d0951 ""
   "Recursos/Imagens/MediaFidelidade1.png" 1737134451 320177 dc3b636ee7674c7326c1bcb907ee26b1 ""
   "Recursos/Imagens/MediaFidelidade2.png" 1737134521 268165 29adc92bbbf54b5c84c2e93ab44c2ca0 ""
   "Recursos/Imagens/ModeloFisico.png" 1737383891 28687 1cd3e76e1c925c6eddd0a36b2f659779 ""
@@ -131,14 +132,14 @@
   "Recursos/Logos/IPBejaESTIG.jpg" 1731453099 24524 8256cc09fbb9140893a7ec292a0eb389 ""
   "Recursos/Logos/LOGO_IPB.png" 1731453099 70931 8e4fd2cd3676e6d3adc0f137d7334c9f ""
   "Recursos/referencias.bib" 1737383891 1717 b4c0e11ced474e4f9c926918609cc42d ""
-  "Relatorio.aux" 1737474067 11455 677f32b181c46bf729b6b1b62e26da08 "pdflatex"
+  "Relatorio.aux" 1737476810 10997 2ee6774898b8efb6d3fc88cf2b5b124a "pdflatex"
   "Relatorio.bbl" 1737474042 23677 c97527af63092d42115ad0cc98b63f6c "biber Relatorio"
-  "Relatorio.lof" 1737474067 892 31ac27e5cefde845d3e52161d1921f6a "pdflatex"
-  "Relatorio.out" 1737474067 9472 35731c0aade4650bd393cfcb2065c51e "pdflatex"
-  "Relatorio.run.xml" 1737474067 2410 717c0927f41f216f3cf4bba59bbfc439 "pdflatex"
-  "Relatorio.tex" 1737472939 39496 bf5e44c3a352ed1ed0128c18add42b79 ""
-  "Relatorio.toc" 1737474067 4083 9bf48cbbb33328edb91b5dd1ec2633d6 "pdflatex"
-  "c:/Users/Marti/Documents/MyAnimeCollection_DAW/Relatórios/Relatório 23917/Relatorio.tex" 1737472939 39496 bf5e44c3a352ed1ed0128c18add42b79 ""
+  "Relatorio.lof" 1737476810 1004 99aefc7ce6dc569993672c9b7af9c58e "pdflatex"
+  "Relatorio.out" 1737476810 8718 d901000fd2ff43b1a7ef34082ba30f7a "pdflatex"
+  "Relatorio.run.xml" 1737476810 2410 717c0927f41f216f3cf4bba59bbfc439 "pdflatex"
+  "Relatorio.tex" 1737476801 34048 07ec9679d5417e132bf8cafd394fdd95 ""
+  "Relatorio.toc" 1737476810 3771 f90dba74a6282e33e9b0ec3b39ac9fd3 "pdflatex"
+  "c:/Users/Marti/Documents/MyAnimeCollection_DAW/Relatórios/Relatório 23917/Relatorio.tex" 1737476801 34048 07ec9679d5417e132bf8cafd394fdd95 ""
   (generated)
   "Relatorio.aux"
   "Relatorio.bcf"
