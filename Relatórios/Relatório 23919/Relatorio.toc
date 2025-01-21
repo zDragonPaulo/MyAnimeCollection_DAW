@@ -27,19 +27,14 @@
 \contentsline {section}{\numberline {8}Implementação}{18}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Arquitetura do Sistema}{18}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}Tecnologias Usadas}{19}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Desenvolvimento da API}{19}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.3}Desenvolvimento da API}{20}{subsection.8.3}%
 \contentsline {subsection}{\numberline {8.4}Especificação da Interface}{20}{subsection.8.4}%
-\contentsline {subsection}{\numberline {8.5}Decisões de Implementação}{20}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.5}Decisões de Implementação}{21}{subsection.8.5}%
 \contentsline {subsection}{\numberline {8.6}Principais Casos Relevantes de Programação}{21}{subsection.8.6}%
-\contentsline {section}{\numberline {9}Desenvolvimento da App Frontend/MVC}{21}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Decisões de Implementação}{21}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Principais Casos Relevantes de Programação}{22}{subsection.9.2}%
-\contentsline {subsubsection}{Martinho José Novo Caeiro}{23}{section*.1}%
-\contentsline {subsubsection}{Avaliar um Anime Especifíco}{23}{section*.1}%
-\contentsline {subsubsection}{Visualizar o perfil de Outro Utilizador}{23}{section*.1}%
-\contentsline {subsubsection}{Avaliar uma Lista de Animes de Outro Utilizador}{24}{section*.1}%
-\contentsline {subsection}{\numberline {9.3}Paulo António Tavares Abade}{24}{subsection.9.3}%
-\contentsline {subsubsection}{Consultar Animes}{24}{section*.2}%
-\contentsline {subsubsection}{Adicionar Animes a uma Lista}{25}{section*.2}%
-\contentsline {section}{\numberline {10}Conclusão e Trabalho Futuro}{28}{section.10}%
-\contentsline {section}{Bibliografia}{29}{section*.3}%
+\contentsline {section}{\numberline {9}Desenvolvimento da App Frontend/MVC}{22}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Decisões de Implementação}{22}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Principais Casos Relevantes de Programação}{23}{subsection.9.2}%
+\contentsline {subsubsection}{Consultar Animes}{23}{section*.1}%
+\contentsline {subsubsection}{Adicionar Animes a uma Lista}{24}{section*.1}%
+\contentsline {section}{\numberline {10}Conclusão e Trabalho Futuro}{27}{section.10}%
+\contentsline {section}{Bibliografia}{28}{section*.2}%

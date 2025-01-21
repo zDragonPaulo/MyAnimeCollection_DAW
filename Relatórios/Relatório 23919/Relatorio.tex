@@ -328,8 +328,11 @@ mais eficiente, na questão de tempo. É limitado a animes, porém pode ser expa
 para outras especificações, como por exemplo, o género do anime, ou o estúdio que o
 produziu com melhor avaliação num determinado periodo de tempo.
 
-(Inserir imagem da funcionalidade do ecrã de visualização de animes com melhor avaliação
-entre datas)
+\begin{figure}[H]
+    \includegraphics[width=1\textwidth]{Recursos/Imagens/InterfaceCA5Melhoria.png}\par
+    \label{fig:InterfaceCA5Melhoria}
+    \caption{Interface do Caso de Uso 5 com Melhoria}
+\end{figure}
 \newpage
 %-----------------------------------------------------------------------------------------------------------------------------%
 \section{Implementação}
@@ -370,6 +373,7 @@ e a base de dados, o grupo decidiu mudar para ASP.NET Core 9.0, devido à facili
 implementação da API e da base de dados, que foi feita em SQL Server, porém com uma 
 metodologia de Code First. O Frontend foi desenvolvido em Razor, utilizando HTML, CSS,
 Bootstrap e HTML Helpers. O Backend foi desenvolvido em C\#.
+\newpage
 %-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Desenvolvimento da API}
 A API foi desenvolvida em ASP.NET Core 9.0, utilizando Entity Framework Core para a
@@ -440,8 +444,7 @@ pode adicionar animes à sua lista, e avaliar listas de outros utilizadores.
 Foi implementado um sistema de autorização, que permite ao utilizador aceder a certas páginas
 apenas se estiver autenticado. Por exemplo, o utilizador só pode aceder à página de perfil se
 estiver autenticado, caso contrário, é redirecionado para a página de login. Ainda foi implementado
-um sistema de autorização que permite apenas ao dono de uma lista gerir a mesma, ou seja, 
-adicionar animes à lista ou remover animes da lista.
+um sistema de autorização que permite apenas ao dono de uma lista gerir a mesma.
 
 %-----------------------------------------------------------------------------------------------------------------------------%
 \subsection{Principais Casos Relevantes de Programação}
@@ -453,62 +456,6 @@ para o caminho relativo dos ficheiros .mdf e .log da base de dados ligada à API
 Iniciando agora os principais casos de implementação, focando na parte de cada membro do grupo.
 %-----------------------------------------------------------------------------------------------------------------------------%
 %-----------------------------------------------------------------------------------------------------------------------------%
-
-\subsubsection{Martinho José Novo Caeiro}
-\subsubsection{Avaliar um Anime Especifíco}
-Este não é um caso de uso do sistema, porém é uma funcionalidade que foi implementada no sistema,
-para que seja possível fazer o caso de uso 5, partilhado entre os dois membros do grupo.
-Para avaliar um anime específico, foi necessário criar um método que permitisse essa funcionalidade ao utilizador. 
-Este método foi criado no controlador \textit{AnimeController}, que permite ao utilizador avaliar esse anime, 
-com  base em estrelas, que vão de 1 a 5. Essa informação é guardada na base de dados, e é possível visualizar a média da avaliação
-do anime na página do mesmo.
-
-%-----------------------------------------------------------------------------------------------------------------------------%
-\subsubsection{Visualizar o perfil de Outro Utilizador}
-Neste caso de uso, foi necessário criar um método que permitisse ao utilizador visualizar o perfil de outro utilizador,
-sem que o utilizador autenticado tenha permissão de alterar qualquer coisa no perfil do utilizador que está a ser 
-visualizado, isto foi feito com recurso a verificações nas views \textit{Profile} e \textit{UserList},
-onde o utilizador apenas pode ver, se não pode o dono da lista ou do perfil.
-como é possível ver a seguir:\\\\
-\begin{minipage}[H]{0.8\textwidth}
-    \begin{verbatim}
-        @if (userId == Model.UserId)
-        {
-            <div>
-                <button class="btn btn-danger btn-sm remove-anime-btn" 
-                data-anime-id="@anime.AnimeId">
-                    -
-                </button>
-            </div>
-        }
-    \end{verbatim}
-    \label{code:VisualizarPerfil}
-\end{minipage}
-%-----------------------------------------------------------------------------------------------------------------------------%
-
-\subsubsection{Avaliar uma Lista de Animes de Outro Utilizador}
-Para avaliar uma lista de animes de outro utilizador, foi necessário criar um método que permitisse essa funcionalidade ao utilizador.
-Este método foi criado no controlador \textit{UserListController}, que permite ao utilizador avaliar a lista de outro utilizador,
-com base em estrelas, que vão de 1 a 5. Essa informação é guardada na base de dados, e é possível visualizar a média da avaliação da lista
-na página do perfil do utilizador e nos detalhes da lista.\\
-
-
-\begin{minipage}[H]{0.8\textwidth}
-    \begin{verbatim}
-        var ratings = await _context.UserListAvaliations
-            .Where(r => r.UserListId == id_lista)
-            .ToListAsync();
-
-        var averageRating = ratings.Any() ? ratings.Average(r => 
-        r.Avaliation / 2.0) : 0;
-        ViewBag.AverageRating = averageRating;
-    \end{verbatim}
-\end{minipage}
-
-%-----------------------------------------------------------------------------------------------------------------------------%
-%-----------------------------------------------------------------------------------------------------------------------------%
-
-\subsection{Paulo António Tavares Abade}
 \subsubsection{Consultar Animes}
 Para consultar animes, foi necessário criar um método que permitisse essa funcionalidade ao utilizador. Este método foi criado no controlador
 \textit{AnimeController}, com o excerto de código visto a seguir, que permite ao utilizador pesquisar um anime pelo nome, e o sistema retorna 
@@ -544,12 +491,12 @@ sendo que esta fica na página principal do sistema, e é realizada pelo control
 \subsubsection{Adicionar Animes a uma Lista}
 Para adicionar animes a uma lista, foi necessário criar um método que permitisse essa funcionalidade ao utilizador. Este método foi criado no controlador
 \textit{UserListController} que permite ao utilizador adicionar um anime às suas listas pessoais de animes para organizar seu progresso de visualização, 
-ou apenas para separar os animes de acordo com o seu gosto, como por exemplo, separar os animes por aqueles mais nostáligicos, ou por aqueles que
+ou apenas para separar os animes de acordo com o seu gosto, como por exemplo, separar os animes por aqueles mais nostálgicos, ou por aqueles que
 que são mais emotivos para aquele utilizador.\\
 Esta foi a funcionalidade mais desafiadora, visto que surgiram vários problemas, como por exemplo, erros relacionados à inserção dos dados na base de 
 dados, e erros relacionados à comunicação entre o Frontend e o Backend, que foram resolvidos com recurso a pesquisas na internet e a ajuda de colegas
 de curso.\\
-Os erros associados à inserção de dados na base de dados, necessitou de eliminar a tabela intermediria que guardava os animes das listas dos utilizadores,
+Os erros associados à inserção de dados na base de dados, necessitou de eliminar a tabela intermediária que guardava os animes das listas dos utilizadores,
 e armazenar os ids dos animes diretamente na tabela de listas dos utilizadores, como um array, como tinha sido feito anteriormente no Projeto de TWAM,
 porém desta vez, cada lista, tinha o seu proprio array de animes, o que permitiu ao utilizador adicionar animes a uma lista especifica, sem que todas 
 as listas tivessem que passar por um processo de atualização. Porém, não foi possível implementar a funcionalidade que permitiria trabalhar de forma mais 
@@ -581,7 +528,7 @@ no modelo de lista a seguir\\
     \end{minipage}
 \\
 \newpage
-Os erros associados à comunição incorreta entre o Frontend e o Backend, que necessitaram de utilizar alguns métodos novos 
+Os erros associados à comunicação incorreta entre o Frontend e o Backend, que necessitaram de utilizar alguns métodos novos 
 para nós, para solucionar os problemas, como a criação de uma classe interna no controlador que permitisse obter corretamente, 
 o id do utilizador e o id do anime, para que o utilizador conseguisse remover com sucesso o anime da lista.\\\\
 \begin{minipage}[H]{0.6\textwidth}
