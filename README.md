@@ -133,3 +133,6 @@ Before submitting PRs, avoid committing local .mdf/.log paths or other environme
 - Jikan API (MyAnimeList REST API wrapper)
 - Swagger / OpenAPI
 - Bootstrap
+
+## License
+- This repository is licensed under the GNU General Public License v3.0 (GPL-3.0).
